@@ -1,0 +1,6 @@
+.DS_Store
+*.ckpt
+slurm*.out
+**/lightning_logs/
+**/logs/
+**/cv/
