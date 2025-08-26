@@ -7,8 +7,8 @@ Here are a series of demo notebooks that demonstrate key processes of the OpenAD
 
 2. Modeling  
 &nbsp;&nbsp;&nbsp;&nbsp;2.1. Training models with Anvil  
-&nbsp;&nbsp;&nbsp;&nbsp;2.2. [TBA] Adding a new model type to Anvil  
-&nbsp;&nbsp;&nbsp;&nbsp;2.3. [TBA] Active Learning  
+&nbsp;&nbsp;&nbsp;&nbsp;2.2. [TBA] Active Learning  
+&nbsp;&nbsp;&nbsp;&nbsp;2.3. [TBA] Adding a new model type to Anvil  
 
 3. Evaluation  
 &nbsp;&nbsp;&nbsp;&nbsp;3.1 Comparing models  
@@ -24,11 +24,11 @@ Depending on your use case, you may be interested in compounds with specific phy
 ### 2.1 Training models with Anvil
 Now that you've curated and filtered a dataset, learn how to use Anvil to train an ADMET model! Anvil is our primary infrastructure for model training and evaluation, built to support scalable, reproducible, and rigorous development of ADMET prediction models. Anvil centers around a `yaml`-based recipe system to ensure reproducibility and robustness of model training.
 
-### 2.2 Adding a new model type to Anvil
-Being able to add new models to our Anvil workflow is a key part in being able to expand and scale this architecture. Here, we walkthrough how to correctly add a new model type to Anvil.
-
-### 2.3 Active Learning
+### 2.2 Active Learning
 **TBA** We use active learning to help guide selection of experiments to produce (ideally) high quality, informative data that will in turn be used to update a model's training data, thereby iteratively improving the model in successive training.
+
+### 2.3 Adding a new model type to Anvil
+Being able to add new models to our Anvil workflow is a key part in being able to expand and scale this architecture. Here, we walkthrough how to correctly add a new model type to Anvil.
 
 ### 3.1. Comparing models
 Now that you've trained several different models, you can compare their performances across several different metrics to evaluate which model works best for your use case. You can even generate a final comparative report for easy readability.
