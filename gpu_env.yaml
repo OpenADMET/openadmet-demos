@@ -1,0 +1,81 @@
+name: openadmet-gpu
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python >=3.12
+
+  # Data / ML stack
+  - numpy
+  - pandas
+  - scikit-learn
+  - statsmodels
+  - seaborn
+  - matplotlib
+  - umap-learn
+  - xgboost
+  - lightgbm
+  - catboost
+  - joblib
+  - h5py
+  - pingouin
+  - datamol
+  - mordredcommunity
+  - molfeat
+  - medchem
+  - openff-units
+  - rdkit >=2024.09.4
+  - e3nn
+  - mdanalysis
+  - ase
+  - uncertainty-toolbox
+  - intake
+  - intake-parquet
+  - zarr >=3.0.0
+  - splito
+  - tabulate
+
+  # PyTorch CPU build (no CUDA)
+  - pytorch-gpu
+  - pytorch-lightning
+  - pytorch_cluster
+  - pytorch_geometric
+  - pytorch_scatter
+  - pytorch_sparse
+
+  # Utilities & Dev
+  - jupyterlab
+  - loguru
+  - rich
+  - codecov
+  - pytest
+  - pytest-cov
+  - pytest-xdist
+  - pre-commit
+  - boto3
+  - cairosvg
+  - python-pptx
+  - pydantic
+  - pydantic-settings
+  - hyperopt
+  - wandb
+  - modal
+  - duckdb
+  - pip
+
+  # Pip-only installs (including your repos)
+  - pip:
+      # from openadmet-models
+      - email-validator
+      - git+https://github.com/OpenADMET/mtenn.git@main
+      - phx-class-registry
+      - tabpfn-extensions
+      - git+https://github.com/PriorLabs/TabPFN.git@main
+      # from openadmet-toolkit
+      - chembl-downloader
+      - chai_lab
+      - boltz
+      # the actual OpenADMET repos
+      - git+https://github.com/OpenADMET/openadmet-models.git@main
+      - git+https://github.com/OpenADMET/openadmet-toolkit.git@main
