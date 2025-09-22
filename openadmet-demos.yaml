@@ -22,7 +22,7 @@ dependencies:
   - modal
   - molfeat
   - mordredcommunity
-  - numpy
+  - numpy >=1.23,<2.0 
   - pandas
   - pingouin
   - pip
@@ -55,7 +55,7 @@ dependencies:
   - pip:
     - chembl-downloader
     - email-validator
-    - git+https://github.com/OpenADMET/mtenn.git@remove_dgl
+    - git+https://github.com/OpenADMET/mtenn.git@main
     - phx-class-registry
     - tabpfn-extensions
     - git+https://github.com/PriorLabs/TabPFN.git@main
