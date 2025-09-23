@@ -46,12 +46,10 @@ jobs:
           create-args: >-
             python=${{ matrix.python-version }}
 
-
-
       - name: Execute all notebooks with nbmake
         shell: bash -l {0}
         run: |
-          micromamba install -n openadmet-models nbmake -c conda-forge
+          micromamba install -n openadmet-demos nbmake -c conda-forge
           pytest --nbmake **/*.ipynb
 
 
