@@ -1,7 +1,7 @@
 # Section specifying input data
 data:
   # Specify the dataset file, can be S3 path etc.
-  resource:  ../../1_Data_Curation/processed_data/processed_PXR_chembl.parquet
+  resource:  ../../1_Data_Curation/processed_data/multitask.parquet
   # must be intake
   type: intake
   # Specify input column containing SMILES
@@ -57,7 +57,7 @@ procedure:
       dropout: 0.2
       batch_norm: True
       messages: bond
-      n_tasks: 4 # Number of tasks should match the number of target columns
+      n_tasks: 3 # Number of tasks should match the number of target columns
       from_chemeleon: False
 
   # Specify data splits

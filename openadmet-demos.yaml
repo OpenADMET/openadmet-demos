@@ -1,4 +1,4 @@
-name: openadmet-demo
+name: openadmet-demos
 channels:
   - conda-forge
   - defaults
