@@ -12,7 +12,7 @@ on:
 
 jobs:
   test:
-    name: Test on ${{ matrix.os }}, Python ${{ matrix.python-version }}
+    name: Test Notebooks on ${{ matrix.os }}, Python ${{ matrix.python-version }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -40,20 +40,22 @@ jobs:
           create-args: >-
             python=${{ matrix.python-version }}
 
-      - name: Activate environment and run notebooks
-        shell: bash -l {0}
-        run: |
-          # Activate the environment
-          micromamba activate openadmet-demos
+      - name: Run notebooks with pytest-nbmake
+        uses: mamba-org/run-in-micromamba@v1
+        with:
+          environment-file: openadmet-demos.yaml
+          environment-name: openadmet-demos
+          # This shell block will execute inside the activated micromamba env
+          run: |
+            # Verify environment
+            micromamba list
 
-          # Verify environment
-          conda list
-
-          # Run notebooks with pytest-nbmake
-          pytest --nbmake --maxfail=1 --disable-warnings **/*.ipynb
+            # Run all notebooks
+            pytest --nbmake --maxfail=1 --disable-warnings **/*.ipynb
 
       - name: CodeCov
         uses: codecov/codecov-action@v5.4.2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           name: codecov-${{ matrix.os }}-py${{ matrix.python-version }}
+
