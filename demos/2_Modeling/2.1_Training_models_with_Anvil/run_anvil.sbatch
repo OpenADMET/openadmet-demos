@@ -15,8 +15,8 @@ source ${HOME}/.bashrc
 conda activate openadmet_demos
 
 # Arguments
-RECIPE_PATHS=("anvil_chemprop.yaml", "anvil_multitask.yaml")
-OUTPUT_DIRS=("chemprop", "multitask")
+RECIPE_PATHS=("anvil_chemprop.yaml" "anvil_multitask.yaml")
+OUTPUT_DIRS=("chemprop" "multitask")
 
 RECIPE=${RECIPE_PATHS[$SLURM_ARRAY_TASK_ID]}
 OUTDIR=${OUTPUT_DIRS[$SLURM_ARRAY_TASK_ID]}
