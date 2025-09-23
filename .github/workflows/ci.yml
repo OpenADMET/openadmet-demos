@@ -49,7 +49,7 @@ jobs:
       - name: Execute all notebooks with nbmake
         shell: bash -l {0}
         run: |
-          micromamba install -n openadmet-demos nbmake -c conda-forge
+          micromamba activate openadmet-demos
           pytest --nbmake **/*.ipynb
 
 
