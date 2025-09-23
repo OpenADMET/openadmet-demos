@@ -26,6 +26,8 @@ jobs:
         python-version: ["3.12"]
 
     steps:
+      - uses: actions/checkout@v4
+
       - name: Additional info about the build
         shell: bash
         run: |
@@ -44,7 +46,7 @@ jobs:
           create-args: >-
             python=${{ matrix.python-version }}
 
-      - uses: actions/checkout@v4
+
 
       - name: Execute all notebooks with nbmake
         shell: bash -l {0}
