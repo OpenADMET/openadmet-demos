@@ -24,7 +24,7 @@ In this repo, we will walk you through the main functionality of this package:
 4. How to compare model performances.
 5. How to do model inference.
 
----
+
 # Getting Started
 1. Clone this repository, then change to the appropriate directory:
 
@@ -36,7 +36,7 @@ cd openadmet-demos/conda-envs/
 2. Create a `conda` environment containing the requirements from that directory
 
 ```powershell
-conda env create -n openadmet -f openadmet_toolkit.yaml
+conda env create -n openadmet -f openadmet_demos.yaml
 ```
 
 3. Activate the environment
@@ -45,35 +45,28 @@ conda env create -n openadmet -f openadmet_toolkit.yaml
 conda activate openadmet
 ```
 
-4. Change to the root directory where `pyproject.toml` is and create the editable installation:
+# Tutorials
+Within `/demos` are a series of demo notebooks that demonstrate key processes of the OpenADMET package. They are ordered in a typical machine learning workflow.
 
-```powershell
-python -m pip install -e .
-```
+1. Data Curation  
+&nbsp;&nbsp;&nbsp;&nbsp;1.1. Curating external datasets  
 
-5. Now, clone the repository for `openadmet-models` . Then change to the appropriate directory:
+2. Modeling  
+&nbsp;&nbsp;&nbsp;&nbsp;2.1. Training models with Anvil  
 
-```powershell
-git clone git@github.com:OpenADMET/openadmet-models.git
-cd openadmet-models/devtools/conda-envs/
-```
+3. Evaluation  
+&nbsp;&nbsp;&nbsp;&nbsp;3.1 Comparing models  
+&nbsp;&nbsp;&nbsp;&nbsp;3.2 Model inference  
+---
 
-1. Update the conda environment `openadmet` with the `openadmet-models` ’s yaml.
+### 1.1. Curating external datasets
+In addition to the provided datasets, you can also plugin datasets from external sources, e.g. your own data or from public data sources. This notebook will walk you through necessary bare minimum data transformation and cleaning that your external data has to undergo to be amenable to modeling.
 
-```powershell
-conda env update -n openadmet -f openadmet_models.yaml
-```
+### 2.1 Training models with Anvil
+Now that you've curated and filtered a dataset, learn how to use Anvil to train an ADMET model! Anvil is our primary infrastructure for model training and evaluation, built to support scalable, reproducible, and rigorous development of ADMET prediction models. Anvil centers around a `yaml`-based recipe system to ensure reproducibility and robustness of model training.
 
-1. Repeat step 6 with `openadmet_models_gpu.yaml` to install the CLI tools as well.
-2. Change to the root directory where `pyproject.toml` is and create the editable installation:
+### 3.1. Comparing models
+Now that you've trained several different models, you can compare their performances across several different metrics to evaluate which model works best for your use case. You can even generate a final comparative report for easy readability.
 
-```powershell
-python -m pip install .
-```
-
-1. Check that `openadmet-toolkit` and `openadmet-models` have been installed with:
-
-```powershell
-conda list
-```
-
+### 3.2 Model Inference
+Use the best performing model after evaluation to predict on a dataset unseen by the model for your practical application, e.g. predict the pEC50 against PXR of a set of lead candidates.
