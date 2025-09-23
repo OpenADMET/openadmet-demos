@@ -36,8 +36,8 @@ jobs:
       # More info on options: https://github.com/marketplace/actions/setup-micromamba
       - uses: mamba-org/setup-micromamba@v1
         with:
-          environment-file: devtools/conda-envs/openadmet-models.yaml
-          environment-name: openadmet-models
+          environment-file: openadmet-demos.yaml
+          environment-name: openadmet-demos
           condarc: |
             channels:
               - conda-forge
