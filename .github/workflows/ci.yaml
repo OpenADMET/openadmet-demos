@@ -44,13 +44,16 @@ jobs:
             python=${{ matrix.python-version }}
 
       # Activate environment and run notebooks
-      - name: Activate environment and run notebooks
+      - name: Install pytest-nbmake
         shell: bash -l {0}
         run: |
           micromamba activate openadmet-demos
-          echo "Environment packages:"
-          micromamba list
-          echo "Running notebooks with pytest-nbmake..."
+          python -m pip install nbmake
+
+      - name: Install pytest-nbmake
+        shell: bash -l {0}
+        run: |
+          micromamba activate openadmet-demos
           pytest --nbmake --maxfail=1 --disable-warnings **/*.ipynb
 
       # Optionally run CodeCov

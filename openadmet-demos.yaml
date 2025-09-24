@@ -34,7 +34,6 @@ dependencies:
   - pytorch_scatter
   - pytorch_sparse
   - pytest
-  - pytest-nbmake
   - pytest-cov
   - pytest-xdist
   - openff-units
