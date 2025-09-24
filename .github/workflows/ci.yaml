@@ -54,7 +54,7 @@ jobs:
         shell: bash -l {0}
         run: |
           micromamba activate openadmet-demos
-          pytest --nbmake --maxfail=1 --disable-warnings **/*.ipynb
+          pytest --nbmake --maxfail=1 --disable-warnings .
 
       # Optionally run CodeCov
       - name: CodeCov
