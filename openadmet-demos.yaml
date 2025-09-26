@@ -1,0 +1,65 @@
+name: openadmet-demos
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - ase
+  - catboost
+  - chemprop >= 2.1.1
+  - codecov
+  - datamol
+  - e3nn
+  - h5py
+  - hyperopt
+  - intake
+  - intake-parquet
+  - joblib
+  - jupyterlab
+  - lightgbm
+  - loguru
+  - matplotlib
+  - mdanalysis
+  - modal
+  - molfeat
+  - mordredcommunity
+  - numpy >=1.23,<2.0 
+  - pandas
+  - pingouin
+  - pip
+  - python >= 3.12
+  - pytorch
+  - pytorch-lightning
+  - pytorch_cluster
+  - pytorch_geometric
+  - pytorch_scatter
+  - pytorch_sparse
+  - pytest
+  - pytest-cov
+  - pytest-xdist
+  - openff-units
+  - rdkit
+  - rich
+  - scikit-learn
+  - seaborn
+  - splito
+  - statsmodels
+  # - tabpfn
+  - tabulate
+  - umap-learn
+  - uncertainty-toolbox
+  - wandb
+  - xgboost
+  - zarr >=3.0.0
+  - duckdb
+  - datamol
+  - medchem
+  - pip:
+    - chembl-downloader
+    - email-validator
+    - git+https://github.com/OpenADMET/mtenn.git@main
+    - phx-class-registry
+    - tabpfn-extensions
+    - git+https://github.com/PriorLabs/TabPFN.git@main
+    - git+https://github.com/OpenADMET/openadmet-models.git
+    - git+https://github.com/OpenADMET/openadmet-toolkit.git
+    - mols2grid

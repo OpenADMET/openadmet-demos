@@ -1,0 +1,68 @@
+data:
+  anvil_dir: file:///Users/cynthiaxu/Documents/Coding Projects/OMSF/openadmet-demos/demos/2_Modeling/2.1_Training_models_with_Anvil
+  cat_entry: null
+  dropna: true
+  input_col: OPENADMET_CANONICAL_SMILES
+  resource: ../../1_Data_Curation/processed_data/processed_PXR_chembl.parquet
+  target_cols:
+  - OPENADMET_LOGAC50
+  type: intake
+metadata:
+  authors: Your Name
+  biotargets:
+  - PXR
+  build_number: 0
+  description: basic regression using a LightGBM model
+  driver: sklearn
+  email: youremail@email.com
+  name: lgbm_pchembl
+  tag: openadmet-chembl
+  tags:
+  - openadmet
+  - test
+  - pchembl
+  version: v1
+procedure:
+  ensemble: null
+  feat:
+    params:
+      featurizers:
+        DescriptorFeaturizer:
+          descr_type: desc2d
+        FingerprintFeaturizer:
+          fp_type: ecfp:4
+    type: FeatureConcatenator
+  model:
+    param_path: null
+    params:
+      alpha: 0.005
+      learning_rate: 0.05
+      n_estimators: 500
+    serial_path: null
+    type: LGBMRegressorModel
+  split:
+    params:
+      random_state: 42
+      test_size: 0.2
+      train_size: 0.8
+      val_size: 0.0
+    type: ShuffleSplitter
+  train:
+    params: {}
+    type: SKLearnBasicTrainer
+  transform: null
+report:
+  eval:
+  - params: {}
+    type: RegressionMetrics
+  - params:
+      axes_labels:
+      - True pAC50
+      - Predicted pAC50
+      max_val: 10
+      min_val: 3
+      n_repeats: 5
+      n_splits: 5
+      pXC50: true
+      title: True vs Predicted pAC50 on test set
+    type: SKLearnRepeatedKFoldCrossValidation

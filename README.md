@@ -1,79 +1,114 @@
 <div style="text-align: left">
-<img src="oADMET-color-tagline.png" alt="Anvil diagram" width="500"/>  
+<img src="./static/oADMET-color-tagline.png" alt="OpenADMET" width="500"/>  
 </div>
 
 ---
 # OpenADMET Demos
 
-Welcome to the OpenADMET package! This toolkit provides an open-source framework for evaluating **A**bsorption, **D**istribution, **M**etabolism, **E**xcretion, and **T**oxicity (ADMET) qualities of small molecule drug candidates against common protein anti-targets for clinical viability.
+The OpenADMET Demos are a hands-on way to explore the OpenADMET ecosystem in action. Each demo is designed to highlight key capabilities, from  data curation, basic featurization and model training to more advanced workflows such as deep learning and active learning for ADMET prediction.
 
-> Are you a clinical researcher trying to generate a pool of compounds to test against your disease target?
+These examples are intended to be:
+
+* Practical – showing real use cases on chemical datasets.
+
+* Educational – helping you understand the building blocks of the OpenADMET ecosystem.
+
+* Interactive – many are designed to run in Google Colab so you can experiment directly in your browser.
+
+Whether you’re just getting started or looking for inspiration for your own projects, the demos will walk you through how to combine datasets, featurizers, models, and evaluation tools into end-to-end workflows.
+
+
+
+## Who are these demos for ? 
+
+
+> Are you a researcher trying to generate a pool of compounds to test against your disease target?
 
 > Are you an R&D lab scientist looking to fine tune an ADMET model with your assay data?
 
-> Are you an ML scientist looking to compare the latest cheminformatics models?
+> Are you an ML scientist looking to compare the latest machine learning models?
 
-> OR, are you a student looking to build your very first ADMET model?
+> Are you a student looking to build your very first ADMET model?
 
-Then, this is the toolkit for you!
+These demos are for you! 
 
-In this repo, we will walk you through the main functionality of this package:
-1. How to curate a dataset for model training.
-2. How to filter that datasets for specific compounds of interest.
-3. How to train a model with our workflow, Anvil, to predict compound activity.
-4. How to compare model performances.
-5. How to do model inference.
 
----
+Currently the main focus is of the demos is the [OpenADMET Models package](https://github.com/OpenADMET/openadmet-models) that houses our production grade workflows. Some additional utilities and tools come from the [OpenADMET Toolkit package](https://github.com/OpenADMET/openadmet-toolkit).
+
+
+
+
 # Getting Started
 1. Clone this repository, then change to the appropriate directory:
 
-```powershell
+```bash
 git clone git@github.com:OpenADMET/openadmet-demos.git
 cd openadmet-demos/conda-envs/
 ```
 
 2. Create a `conda` environment containing the requirements from that directory
 
-```powershell
-conda env create -n openadmet -f openadmet_toolkit.yaml
+```bash
+conda env create -n openadmet -f openadmet_demos.yaml
 ```
 
 3. Activate the environment
 
-```powershell
-conda activate openadmet
+```bash
+conda activate openadmet-demos
 ```
 
-4. Change to the root directory where `pyproject.toml` is and create the editable installation:
 
-```powershell
-python -m pip install -e .
-```
+You can then work through the demos.
 
-5. Now, clone the repository for `openadmet-models` . Then change to the appropriate directory:
+# Tutorials
+Within `demos/` are a series of demo notebooks that demonstrate key processes of the OpenADMET package. They are ordered in a typical machine learning workflow.
 
-```powershell
-git clone git@github.com:OpenADMET/openadmet-models.git
-cd openadmet-models/devtools/conda-envs/
-```
+1. Data Curation  
+&nbsp;&nbsp;&nbsp;&nbsp;1.1. Curating external datasets  
 
-1. Update the conda environment `openadmet` with the `openadmet-models` ’s yaml.
+2. Modeling  
+&nbsp;&nbsp;&nbsp;&nbsp;2.1. Training models with Anvil  
 
-```powershell
-conda env update -n openadmet -f openadmet_models.yaml
-```
+3. Evaluation  
+&nbsp;&nbsp;&nbsp;&nbsp;3.1 Comparing models  
+&nbsp;&nbsp;&nbsp;&nbsp;3.2 Model inference  
+---
 
-1. Repeat step 6 with `openadmet_models_gpu.yaml` to install the CLI tools as well.
-2. Change to the root directory where `pyproject.toml` is and create the editable installation:
+### 1.1. Curating external datasets
+In addition to the provided datasets, you can also plugin datasets from external sources, e.g. your own data or from public data sources. This notebook will walk you through necessary bare minimum data transformation and cleaning that your external data has to undergo to be amenable to modeling.
 
-```powershell
-python -m pip install .
-```
+### 2.1 Training models with Anvil
+Now that you've curated and filtered a dataset, learn how to use Anvil to train an ADMET model! `Anvil` is our primary infrastructure for model training and evaluation, built to support scalable, reproducible, and rigorous development of ADMET prediction models. Anvil centers around a `yaml`-based recipe system to ensure reproducibility and robustness of model training.
 
-1. Check that `openadmet-toolkit` and `openadmet-models` have been installed with:
+### 3.1. Comparing models
+Now that you've trained several different models, you can compare their performances across several different metrics to evaluate which model works best for your use case. You can even generate a final comparative report for easy readability.
 
-```powershell
-conda list
-```
+### 3.2 Model Inference
+Use the best performing model after evaluation to predict on a dataset unseen by the model for your practical application, e.g. predict the pEC50 against PXR of a set of lead candidates.
 
+
+### Showcase 
+
+In `showcase/` the OpenADMET showcase notebook brings everything together into a complete, compact, end-to-end workflow. It demonstrates how to:
+
+* Ingest and curate datasets from internal or external sources.
+
+* Apply featurization to transform chemical matter into model-ready representations.
+
+* Train multiple models using Anvil with reproducible YAML-based recipes.
+
+* Evaluate performance across standard metrics and generate comparative reports.
+
+* Run inference on new compounds to support decision-making in real research contexts.
+
+This notebook is a practical guide to building a full ADMET modeling pipeline with OpenADMET—ideal if you want to see the ecosystem in action or adapt the workflow for your own projects.
+
+
+# Next steps 
+
+Ready to go further?
+
+* Join the community – Ask questions, share feedback, and discuss workflows with other users on our [GitHub Discussions](https://github.com/orgs/OpenADMET/discussions).
+* Contribute – Found a bug, have a feature request, or built a new workflow? Open an issue or pull requestand help grow the ecosystem.
+* Stay updated – Keep an eye on our repositories for new demos, model architectures, and tools as they’re released. Updates will appear on our [website](https://openadmet.org/)
