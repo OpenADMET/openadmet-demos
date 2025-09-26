@@ -51,7 +51,7 @@ CYP3A4 inhibition occurs when a compound reduces the activity of the CYP3A4 enzy
 * Reversible inhibition: The inhibitor temporarily binds to the enzyme, and normal activity resumes when it dissociates.
 * irreversible inhibition: The inhibitor permanently inactivates the enzyme, requiring biosynthesis of new CYP3A4 to restore activity.
 
-CYP3A4 inhibition is commonly measured in vitro using enzyme assays with a probe substrate. The most widely used metric is the $IC_50$ or half maximal inhibitory concentration: the concentration of an inhibitor needed to reduce enzyme activity by 50%. Lower $IC_50$ values indicate stronger inhibition.
+CYP3A4 inhibition is commonly measured in vitro using enzyme assays with a probe substrate. The most widely used metric is the $IC_{50}$ or half maximal inhibitory concentration: the concentration of an inhibitor needed to reduce enzyme activity by 50%. Lower $IC_{50}$ values indicate stronger inhibition.
 
 ## Items 
 
