@@ -1,5 +1,5 @@
 <div style="text-align: left">
-<img src="oADMET-color-tagline.png" alt="OpenADMET" width="500"/>  
+<img src="./static/oADMET-color-tagline.png" alt="OpenADMET" width="500"/>  
 </div>
 
 ---
@@ -62,7 +62,7 @@ conda activate openadmet-demos
 You can then work through the demos.
 
 # Tutorials
-Within `/demos` are a series of demo notebooks that demonstrate key processes of the OpenADMET package. They are ordered in a typical machine learning workflow.
+Within `demos/` are a series of demo notebooks that demonstrate key processes of the OpenADMET package. They are ordered in a typical machine learning workflow.
 
 1. Data Curation  
 &nbsp;&nbsp;&nbsp;&nbsp;1.1. Curating external datasets  
@@ -90,7 +90,7 @@ Use the best performing model after evaluation to predict on a dataset unseen by
 
 ### Showcase 
 
-The showcase notebook brings everything together into a complete, end-to-end workflow. It demonstrates how to:
+In `showcase/` the OpenADMET showcase notebook brings everything together into a complete, compact, end-to-end workflow. It demonstrates how to:
 
 * Ingest and curate datasets from internal or external sources.
 
