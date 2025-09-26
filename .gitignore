@@ -4,3 +4,8 @@ slurm*.out
 **/lightning_logs/
 **/logs/
 **/cv/
+
+
+# ipython
+.ipynb_checkpoints
+**/.ipynb_checkpoints
