@@ -28,7 +28,7 @@ Whether you’re just getting started or looking for inspiration for your own pr
 
 > Are you a student looking to build your very first ADMET model?
 
-> Want to understand how we approach ML at 
+> Want to understand how we approach ML at OpenADMET
 
 These demos are for you! 
 
