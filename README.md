@@ -9,11 +9,11 @@ The OpenADMET Demos are a hands-on way to explore the OpenADMET ecosystem in act
 
 These examples are intended to be:
 
-* Practical – showing real use cases on chemical datasets.
+* **Practical** – showing real use cases on chemical datasets.
 
-* Educational – helping you understand the building blocks of the OpenADMET ecosystem.
+* **Educational** – helping you understand the building blocks of the OpenADMET ecosystem.
 
-* Interactive – many are designed to run in Google Colab so you can experiment directly in your browser.
+* **Interactive** – Jupyter notebooks (some of which run nicely in Google Colab) give you a hands on introduction
 
 Whether you’re just getting started or looking for inspiration for your own projects, the demos will walk you through how to combine datasets, featurizers, models, and evaluation tools into end-to-end workflows.
 
@@ -22,13 +22,13 @@ Whether you’re just getting started or looking for inspiration for your own pr
 ## Who are these demos for ? 
 
 
-> Are you a researcher trying to generate a pool of compounds to test against your disease target?
+> Are you an ML scientist looking to compare the latest machine learning models?
 
 > Are you an R&D lab scientist looking to fine tune an ADMET model with your assay data?
 
-> Are you an ML scientist looking to compare the latest machine learning models?
-
 > Are you a student looking to build your very first ADMET model?
+
+> Want to understand how we approach ML at 
 
 These demos are for you! 
 
