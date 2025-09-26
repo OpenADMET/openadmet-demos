@@ -47,14 +47,12 @@ jobs:
       - name: Install pytest-nbmake
         shell: bash -l {0}
         run: |
-          micromamba activate openadmet-demos
-          python -m pip install nbmake
+          python -m pip install nbmake pytest-xdist
 
-      - name: Install pytest-nbmake
+      - name: Run tests with pytest-nbmake
         shell: bash -l {0}
         run: |
-          micromamba activate openadmet-demos
-          pytest --nbmake --maxfail=1 --disable-warnings .
+          pytest -n=auto --nbmake --maxfail=1 --disable-warnings .
 
       # Optionally run CodeCov
       - name: CodeCov
