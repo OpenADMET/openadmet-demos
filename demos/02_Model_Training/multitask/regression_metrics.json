@@ -1,0 +1,99 @@
+{
+  "tag": "chemprop",
+  "OPENADMET_LOGAC50_cyp3a4": {
+    "mse": {
+      "value": 0.2690560077377047,
+      "lower_ci": 0.24131207538699168,
+      "upper_ci": 0.2947293741574254,
+      "confidence_level": 0.95
+    },
+    "mae": {
+      "value": 0.3650514759120107,
+      "lower_ci": 0.3521505337964416,
+      "upper_ci": 0.37787572398095143,
+      "confidence_level": 0.95
+    },
+    "r2": {
+      "value": 0.4223121934540427,
+      "lower_ci": 0.3765912643971268,
+      "upper_ci": 0.4717023811333593,
+      "confidence_level": 0.95
+    },
+    "ktau": {
+      "value": 0.43942098988776207,
+      "lower_ci": 0.4187699136779285,
+      "upper_ci": 0.46016253397748247,
+      "confidence_level": 0.95
+    },
+    "spearmanr": {
+      "value": 0.5994054947371912,
+      "lower_ci": 0.5735149326252817,
+      "upper_ci": 0.6251586018953992,
+      "confidence_level": 0.95
+    }
+  },
+  "OPENADMET_LOGAC50_pxr": {
+    "mse": {
+      "value": 0.336770561841238,
+      "lower_ci": 0.1507465468303405,
+      "upper_ci": 0.46425911977980083,
+      "confidence_level": 0.95
+    },
+    "mae": {
+      "value": 0.41527821095784506,
+      "lower_ci": 0.35298149640219567,
+      "upper_ci": 0.47173825545174736,
+      "confidence_level": 0.95
+    },
+    "r2": {
+      "value": 0.5387639327567422,
+      "lower_ci": 0.3796209486898572,
+      "upper_ci": 0.7367232854285453,
+      "confidence_level": 0.95
+    },
+    "ktau": {
+      "value": 0.548523731709129,
+      "lower_ci": 0.4770614245612511,
+      "upper_ci": 0.6247149124147243,
+      "confidence_level": 0.95
+    },
+    "spearmanr": {
+      "value": 0.7317578096728176,
+      "lower_ci": 0.6571124967777546,
+      "upper_ci": 0.82381337784642,
+      "confidence_level": 0.95
+    }
+  },
+  "OPENADMET_LOGAC50_ahr": {
+    "mse": {
+      "value": 1.059826010679389,
+      "lower_ci": 0.5967545959535743,
+      "upper_ci": 1.4560699476275203,
+      "confidence_level": 0.95
+    },
+    "mae": {
+      "value": 0.8073638916015624,
+      "lower_ci": 0.6212742473880449,
+      "upper_ci": 0.9848385777076083,
+      "confidence_level": 0.95
+    },
+    "r2": {
+      "value": 0.5417884939478952,
+      "lower_ci": 0.35974388285846637,
+      "upper_ci": 0.899088972302971,
+      "confidence_level": 0.95
+    },
+    "ktau": {
+      "value": 0.5391493215070005,
+      "lower_ci": 0.41193467946607654,
+      "upper_ci": 0.6817441708865297,
+      "confidence_level": 0.95
+    },
+    "spearmanr": {
+      "value": 0.7262609529765385,
+      "lower_ci": 0.6173459099001043,
+      "upper_ci": 0.8965810401872768,
+      "confidence_level": 0.95
+    }
+  }
+}
