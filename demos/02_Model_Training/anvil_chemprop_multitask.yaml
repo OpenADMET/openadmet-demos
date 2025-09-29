@@ -1,7 +1,7 @@
 # Section specifying input data
 data:
   # Specify the dataset file, can be S3 path etc.
-  resource:  ../../1_Data_Curation/processed_data/multitask.parquet
+  resource:  ./additional_data/multitask.parquet
   # must be intake
   type: intake
   # Specify input column containing SMILES

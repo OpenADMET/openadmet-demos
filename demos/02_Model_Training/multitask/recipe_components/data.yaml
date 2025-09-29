@@ -1,0 +1,8 @@
+anvil_dir: file:///store/projects/OpenADMET/openadmet-toolkit/openadmet-demos/demos/02_Model_Training
+cat_entry: null
+dropna: false
+input_col: OPENADMET_CANONICAL_SMILES
+resource: '.../01_Data_Curation/processed_data/processed_CYP3A4_inhibition.csv'
+target_cols:
+- OPENADMET_LOGAC50
+type: intake
