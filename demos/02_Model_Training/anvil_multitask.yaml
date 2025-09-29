@@ -1,0 +1,109 @@
+# Section specifying input data
+data:
+  # Specify the dataset file, can be S3 path etc.
+  resource:  ../../1_Data_Curation/processed_data/multitask.parquet
+  # must be intake
+  type: intake
+  # Specify input column containing SMILES
+  input_col: OPENADMET_CANONICAL_SMILES
+  # Specify whether or not to drop NaN data rows
+  dropna: False
+  # Specify each (1+) of the target columns
+  target_cols:
+  - OPENADMET_LOGAC50_cyp3a4
+  - OPENADMET_LOGAC50_pxr
+  - OPENADMET_LOGAC50_ahr
+
+# Additional metadata
+metadata:
+  authors: Your Name
+  email: youremail@mail.com
+  biotargets:
+  - CYP3A4
+  - PXR
+  - AHR
+  build_number: 0
+  description: basic regression using a ChemProp multitask task model
+  driver: pytorch
+  name: chemprop_pchembl
+  tag: chemprop
+  tags:
+  - openadmet
+  - test
+  - chemprop
+  version: v1
+
+# Section specifying training procedure
+procedure:
+  # Featurization specification
+  feat:
+    # Using the ChemPropFeaturizer (for ChemProp model)
+    # See openadmet.models.features
+    type: ChemPropFeaturizer
+    # No parameters passed
+    params: {}
+  
+  # Model specification
+  model:
+    # Indicate model type
+    # See openadmet.models.architecture
+    type: ChemPropModel
+    # Specify model parameters
+    params:
+      depth: 4
+      ffn_hidden_dim: 1024
+      ffn_hidden_num_layers: 4
+      message_hidden_dim: 2048
+      dropout: 0.2
+      batch_norm: True
+      messages: bond
+      n_tasks: 3 # Number of tasks should match the number of target columns
+      from_chemeleon: False
+
+  # Specify data splits
+  split:
+    # Specify how data will be split, can be ShuffleSplitter, ScaffoldSplitter, etc.
+    # See openadmet.models.split
+    type: ShuffleSplitter
+    # Specify split parameters
+    params:
+      random_state: 42
+      train_size: 0.7
+      val_size: 0.1
+      test_size: 0.2
+    
+  # Specify training configuration
+  train:
+    # Specify the trainer, here LightningTrainer as ChemProp is a PyTorch Lightning model
+    # See openadmet.models.trainer
+    type: LightningTrainer
+    # Specify model parameters
+    params:
+      accelerator: gpu
+      early_stopping: true
+      early_stopping_patience: 10
+      early_stopping_mode: min
+      early_stopping_min_delta: 0.001
+      max_epochs: 50
+      monitor_metric: val_loss
+      use_wandb: false
+      wandb_project: demos # Specify wandb project name according to guidelines
+
+# Section specifying report generation
+report:
+  # Configure evaluation
+  eval:
+  # Generate regression metrics
+  - type: RegressionMetrics
+    params: {}
+  # Generate regression plots & do cross validation
+  - type: PytorchLightningRepeatedKFoldCrossValidation
+    params:
+      axes_labels:
+      - True LogAC50
+      - Predicted LogAC50
+      n_repeats: 5
+      n_splits: 5
+      random_state: 42
+      pXC50: true
+      title: Multitask True vs Predicted LogAC50 on test set
