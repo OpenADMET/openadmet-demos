@@ -1,8 +1,0 @@
-anvil_dir: file:///data1/choderaj/openadmet/openadmet-demos/demos/2_Modeling/2.1_Training_models_with_Anvil
-cat_entry: null
-dropna: false
-input_col: OPENADMET_CANONICAL_SMILES
-resource: ../../1_Data_Curation/processed_data/processed_PXR_chembl.parquet
-target_cols:
-- OPENADMET_LOGAC50
-type: intake

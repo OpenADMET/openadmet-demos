@@ -20,13 +20,12 @@ dependencies:
   - matplotlib
   - mdanalysis
   - modal
-  - molfeat
   - mordredcommunity
   - numpy >=1.23,<2.0 
   - pandas
   - pingouin
   - pip
-  - python >= 3.12
+  - python >=3.11,<3.12 
   - pytorch
   - pytorch-lightning
   - pytorch_cluster
@@ -63,3 +62,5 @@ dependencies:
     - git+https://github.com/OpenADMET/openadmet-models.git
     - git+https://github.com/OpenADMET/openadmet-toolkit.git
     - mols2grid
+    - git+https://github.com/OpenADMET/molfeat.git@main
+
