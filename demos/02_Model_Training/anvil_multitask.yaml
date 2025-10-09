@@ -1,7 +1,7 @@
 # Section specifying input data
 data:
   # Specify the dataset file, can be S3 path etc.
-  resource:  ../../1_Data_Curation/processed_data/multitask.parquet
+  resource:  ../01_Data_Curation/processed_data/multitask.parquet
   # must be intake
   type: intake
   # Specify input column containing SMILES
@@ -10,8 +10,12 @@ data:
   dropna: False
   # Specify each (1+) of the target columns
   target_cols:
+  - OPENADMET_LOGAC50_cyp2j2
   - OPENADMET_LOGAC50_cyp3a4
+  - OPENADMET_LOGAC50_cyp1a2
   - OPENADMET_LOGAC50_pxr
+  - OPENADMET_LOGAC50_cyp2d6
+  - OPENADMET_LOGAC50_cyp2c9
   - OPENADMET_LOGAC50_ahr
 
 # Additional metadata
@@ -20,6 +24,10 @@ metadata:
   email: youremail@mail.com
   biotargets:
   - CYP3A4
+  - CYP2J2
+  - CYP1A2
+  - CYP2D6
+  - CYP2C9
   - PXR
   - AHR
   build_number: 0
@@ -57,7 +65,7 @@ procedure:
       dropout: 0.2
       batch_norm: True
       messages: bond
-      n_tasks: 3 # Number of tasks should match the number of target columns
+      n_tasks: 7 # Number of tasks should match the number of target columns
       from_chemeleon: False
 
   # Specify data splits
