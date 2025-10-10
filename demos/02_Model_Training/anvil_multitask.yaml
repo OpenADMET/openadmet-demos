@@ -10,13 +10,10 @@ data:
   dropna: False
   # Specify each (1+) of the target columns
   target_cols:
-  - OPENADMET_LOGAC50_cyp2j2
   - OPENADMET_LOGAC50_cyp3a4
   - OPENADMET_LOGAC50_cyp1a2
-  - OPENADMET_LOGAC50_pxr
   - OPENADMET_LOGAC50_cyp2d6
   - OPENADMET_LOGAC50_cyp2c9
-  - OPENADMET_LOGAC50_ahr
 
 # Additional metadata
 metadata:
@@ -24,12 +21,10 @@ metadata:
   email: youremail@mail.com
   biotargets:
   - CYP3A4
-  - CYP2J2
   - CYP1A2
   - CYP2D6
   - CYP2C9
-  - PXR
-  - AHR
+
   build_number: 0
   description: basic regression using a ChemProp multitask task model
   driver: pytorch
@@ -65,7 +60,7 @@ procedure:
       dropout: 0.2
       batch_norm: True
       messages: bond
-      n_tasks: 7 # Number of tasks should match the number of target columns
+      n_tasks: 4 # Number of tasks should match the number of target columns
       from_chemeleon: False
 
   # Specify data splits
