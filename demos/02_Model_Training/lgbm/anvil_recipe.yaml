@@ -1,16 +1,16 @@
 data:
-  anvil_dir: file:///Users/cynthiaxu/Documents/Coding Projects/OMSF/openadmet-demos/demos/2_Modeling/2.1_Training_models_with_Anvil
+  anvil_dir: file:///Users/cynthiaxu/OMSF/openadmet-demos/demos/02_Model_Training
   cat_entry: null
   dropna: true
   input_col: OPENADMET_CANONICAL_SMILES
-  resource: ../../1_Data_Curation/processed_data/processed_PXR_chembl.parquet
+  resource: ../01_Data_Curation/processed_data/processed_CYP3A4_inhibition.csv
   target_cols:
   - OPENADMET_LOGAC50
   type: intake
 metadata:
   authors: Your Name
   biotargets:
-  - PXR
+  - CYP3A4
   build_number: 0
   description: basic regression using a LightGBM model
   driver: sklearn
@@ -33,6 +33,7 @@ procedure:
           fp_type: ecfp:4
     type: FeatureConcatenator
   model:
+    freeze_weights: null
     param_path: null
     params:
       alpha: 0.005

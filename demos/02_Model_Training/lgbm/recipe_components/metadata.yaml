@@ -1,6 +1,6 @@
 authors: Your Name
 biotargets:
-- PXR
+- CYP3A4
 build_number: 0
 description: basic regression using a LightGBM model
 driver: sklearn
