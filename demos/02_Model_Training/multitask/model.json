@@ -16,5 +16,5 @@
   "aggregation": "norm",
   "normalized_targets": true,
   "dropout": 0.2,
-  "n_tasks": 3
+  "n_tasks": 4
 }

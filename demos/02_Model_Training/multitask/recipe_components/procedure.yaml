@@ -13,7 +13,7 @@ model:
     from_chemeleon: false
     message_hidden_dim: 2048
     messages: bond
-    n_tasks: 3
+    n_tasks: 4
   serial_path: null
   type: ChemPropModel
 split:

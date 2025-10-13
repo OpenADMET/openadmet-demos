@@ -1,7 +1,7 @@
 # This spection specifies the input data
 data:
   # Specify the dataset file
-  resource: ../../1_Data_Curation/processed_data/processed_PXR_chembl.parquet
+  resource: ../01_Data_Curation/processed_data/processed_CYP3A4_inhibition.csv
   type: intake
   input_col: OPENADMET_CANONICAL_SMILES
   # Specify each (1+) of the target columns, or the column that you're trying to predict
@@ -14,7 +14,7 @@ metadata:
   authors: Your Name
   email: youremail@mail.com
   biotargets:
-  - PXR
+  - CYP3A4
   build_number: 0
   description: basic regression using a ChemProp multitask task model
   driver: pytorch

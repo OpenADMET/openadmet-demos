@@ -1,20 +1,22 @@
 data:
-  anvil_dir: file:///data1/choderaj/openadmet/openadmet-demos/demos/2_Modeling/2.1_Training_models_with_Anvil
+  anvil_dir: file:///data1/choderaj/openadmet/openadmet-demos/demos/02_Model_Training
   cat_entry: null
   dropna: false
   input_col: OPENADMET_CANONICAL_SMILES
-  resource: ../../1_Data_Curation/processed_data/multitask.parquet
+  resource: ../01_Data_Curation/processed_data/multitask.parquet
   target_cols:
   - OPENADMET_LOGAC50_cyp3a4
-  - OPENADMET_LOGAC50_pxr
-  - OPENADMET_LOGAC50_ahr
+  - OPENADMET_LOGAC50_cyp1a2
+  - OPENADMET_LOGAC50_cyp2d6
+  - OPENADMET_LOGAC50_cyp2c9
   type: intake
 metadata:
   authors: Your Name
   biotargets:
   - CYP3A4
-  - PXR
-  - AHR
+  - CYP1A2
+  - CYP2D6
+  - CYP2C9
   build_number: 0
   description: basic regression using a ChemProp multitask task model
   driver: pytorch
@@ -42,7 +44,7 @@ procedure:
       from_chemeleon: false
       message_hidden_dim: 2048
       messages: bond
-      n_tasks: 3
+      n_tasks: 4
     serial_path: null
     type: ChemPropModel
   split:
