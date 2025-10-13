@@ -3,7 +3,7 @@ data:
   # Specify the dataset file
   resource: ../01_Data_Curation/processed_data/processed_CYP3A4_inhibition.csv
   type: intake
-  input_col: OPENADMET_SMILES
+  input_col: OPENADMET_CANONICAL_SMILES
   # Specify each (1+) of the target columns, or the column that you're trying to predict
   target_cols:
   - OPENADMET_LOGAC50
@@ -86,7 +86,7 @@ report:
   - type: RegressionMetrics
     params: {}
   # Generate regression plots & do cross validation
-  - type: SKLearnRepeatedKFoldCrossValidation
+  - type: RegressionPlots
     params:
       axes_labels:
       - True pAC50
