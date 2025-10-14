@@ -44,9 +44,10 @@ jobs:
             python=${{ matrix.python-version }}
 
       # Activate environment and run notebooks
-      - name: Install pytest-nbmake
+      - name: Install pytest-nbmake & demos
         shell: bash -l {0}
         run: |
+          python -m pip install .
           python -m pip install nbmake pytest-xdist
 
       - name: Run tests with pytest-nbmake
