@@ -11,7 +11,7 @@ eval:
     n_splits: 5
     pXC50: true
     title: True vs Predicted pAC50 on test set
-  type: SKLearnRepeatedKFoldCrossValidation
+  type: RegressionPlots
 - params:
     bins: 100
     resolution: 99
