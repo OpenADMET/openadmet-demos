@@ -21,7 +21,6 @@ dependencies:
   - matplotlib
   - mdanalysis
   - modal
-  - molfeat
   - mordredcommunity
   - numpy >=1.23,<2.0 
   - pandas
@@ -64,3 +63,5 @@ dependencies:
     - git+https://github.com/OpenADMET/openadmet-models.git
     - git+https://github.com/OpenADMET/openadmet-toolkit.git
     - mols2grid
+    - git+https://github.com/OpenADMET/molfeat.git@main
+

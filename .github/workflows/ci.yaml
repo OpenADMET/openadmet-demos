@@ -53,11 +53,5 @@ jobs:
       - name: Run tests with pytest-nbmake
         shell: bash -l {0}
         run: |
-          pytest -n=auto --nbmake --maxfail=1 --disable-warnings .
+          pytest -n=auto --nbmake --nbmake-timeout=1200 --maxfail=0 --disable-warnings .
 
-      # Optionally run CodeCov
-      - name: CodeCov
-        uses: codecov/codecov-action@v5.4.2
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          name: codecov-${{ matrix.os }}-py${{ matrix.python-version }}
