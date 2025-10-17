@@ -19,6 +19,7 @@ jobs:
       matrix:
         os: [macOS-latest, ubuntu-latest]
         python-version: ["3.12"]
+    timeout-minutes: 20
 
     steps:
       # Checkout repo
