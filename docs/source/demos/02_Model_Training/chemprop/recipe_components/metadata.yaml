@@ -1,0 +1,13 @@
+authors: Your Name
+biotargets:
+- CYP3A4
+build_number: 0
+description: basic regression using a ChemProp multitask task model
+driver: pytorch
+email: youremail@mail.com
+name: chemprop_pchembl
+tag: chemprop-PXR-chembl
+tags:
+- openadmet
+- test
+version: v1

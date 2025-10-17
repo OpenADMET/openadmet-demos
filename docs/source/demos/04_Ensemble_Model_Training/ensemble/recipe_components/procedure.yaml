@@ -1,0 +1,35 @@
+ensemble:
+  calibration_method: scaling-factor
+  n_models: 5
+  param_paths: null
+  params: {}
+  serial_paths: null
+  type: CommitteeRegressor
+feat:
+  params:
+    featurizers:
+      DescriptorFeaturizer:
+        descr_type: desc2d
+      FingerprintFeaturizer:
+        fp_type: ecfp:4
+  type: FeatureConcatenator
+model:
+  freeze_weights: null
+  param_path: null
+  params:
+    alpha: 0.005
+    learning_rate: 0.05
+    n_estimators: 500
+  serial_path: null
+  type: LGBMRegressorModel
+split:
+  params:
+    random_state: 42
+    test_size: 0.2
+    train_size: 0.7
+    val_size: 0.1
+  type: ShuffleSplitter
+train:
+  params: {}
+  type: SKLearnBasicTrainer
+transform: null

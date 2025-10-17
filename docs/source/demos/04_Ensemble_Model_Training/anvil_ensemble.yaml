@@ -1,0 +1,108 @@
+# This spection specifies the input data
+data:
+  # Specify the dataset file
+  resource: ../01_Data_Curation/processed_data/processed_CYP3A4_inhibition.csv
+  type: intake
+  input_col: OPENADMET_CANONICAL_SMILES
+  # Specify each (1+) of the target columns, or the column that you're trying to predict
+  target_cols:
+  - OPENADMET_LOGAC50
+  dropna: true
+
+# Additional metadata
+metadata:
+  authors: Your Name
+  email: youremail@email.com
+  biotargets:
+  - CYP3A4
+  build_number: 0
+  description: basic regression using a LightGBM model
+  driver: sklearn
+  name: lgbm_pchembl
+  tag: openadmet-chembl
+  tags:
+  - openadmet
+  - test
+  - pchembl
+  version: v1
+
+# Section specifying training procedure
+procedure:
+# Featurization specification
+  feat:
+    # Using concatenated features, which combines multiple featurizers
+    # here we use DescriptorFeaturizer and FingerprintFeaturizer for 2D RDKit descriptors and ECFP4 fingerprints
+    # See openadmet.models.features 
+    type: FeatureConcatenator
+    # Add parameters for the featurizer. Full description of the featurizer options are in Section 5.
+    params:
+      featurizers:
+        DescriptorFeaturizer:
+          descr_type: "desc2d"
+        FingerprintFeaturizer:
+          fp_type: "ecfp:4"
+  
+  # Model specification
+  model:
+    # Indicate model type
+    # See openadmet.models.architecture for all model types
+    type: LGBMRegressorModel
+    # Specify model parameters
+    params:
+      alpha: 0.005
+      learning_rate: 0.05
+      n_estimators: 500
+
+  # Ensemble specification
+  ensemble:
+    type: CommitteeRegressor
+    n_models: 5
+    calibration_method: scaling-factor
+
+  # Specify data splits
+  split:
+    # Specify how data will be split
+    # See openadmet.models.split
+    type: ShuffleSplitter
+    # Specify split parameters
+    params:
+      random_state: 42
+      train_size: 0.7
+      val_size: 0.1 # Validation set is needed for uncertainty calibration
+      test_size: 0.2 # If you want to compare tree-based models with Dl models later, the test sizes should match
+    
+  # Specify training configuration
+  train:
+    # Specify the trainer, here SKLearnBasicTrainer as model has an sklearn interface
+    # could also use SKLearnGridSearchTrainer for hyperparameter tuning
+    type: SKLearnBasicTrainer
+
+
+# Section specifying report generation
+report:
+  # Configure evaluation
+  eval:
+  # Generate regression metrics
+  - type: RegressionMetrics
+    params: {}
+  # Generate regression plots & do cross validation
+  - type: RegressionPlots
+    params:
+      axes_labels:
+      - True pAC50
+      - Predicted pAC50
+      max_val: 10
+      min_val: 3
+      pXC50: true
+      n_splits: 5
+      n_repeats: 5
+      title: True vs Predicted pAC50 on test set
+  # Generate uncertainty metrics
+  - type: UncertaintyMetrics
+    params:
+      bins: 100
+      resolution: 99
+      scaled: True
+  # Generate uncertainty calibration plot
+  - type: UncertaintyPlots
+    params: {}

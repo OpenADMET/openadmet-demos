@@ -19,6 +19,7 @@ jobs:
       matrix:
         os: [macOS-latest, ubuntu-latest]
         python-version: ["3.12"]
+    timeout-minutes: 20
 
     steps:
       # Checkout repo
@@ -53,6 +54,7 @@ jobs:
       - name: Run tests with pytest-nbmake
         shell: bash -l {0}
         run: |
+          cd demos
           pytest -n=auto --nbmake --maxfail=1 --disable-warnings .
 
       # Optionally run CodeCov
