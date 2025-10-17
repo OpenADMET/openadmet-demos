@@ -1,0 +1,490 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+
+  
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../../_static/site.css"/>
+  
+  <meta name="theme-color" content="#015480;">
+  
+  
+    <title>4.0 Ensemble Model Training &#8212; OpenADMET Models  documentation</title>
+  <script type="text/javascript" src="../../_static/openff.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/openff.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../_static/favicon-32x32.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5.0 Model Inference" href="../05_Ensemble_Model_Inference/05_Model_Ensemble_Inference.html" />
+    <link rel="prev" title="3.0 Comparing Models" href="../03_Model_Comparison/03_Comparing_Models.html" />
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-accent=(232, 59, 59)
+        class="has-navbar-fixed-top">
+  <header data-md-component="header">
+  <nav class="navbar is-primary is-fixed-top is-flex-touch has-shadow" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a href="https://docs.openforcefield.org/" class="navbar-item is-hidden-mobile">
+        
+          <img src="../../_static/images/logos/openforcefield_v1_white.png" alt="OpenADMET Models documentation logo">
+        
+      </a>
+    </div>
+
+    <div class="has-text-light is-hidden-mobile nav-title">
+      <div class="breadcrumb">
+  <ul>
+        <li><a href="../../index.html">OpenADMET Models  documentation</a></li>
+      <li class="is-active"><a href="#">4.0 Ensemble Model Training</a></li>
+  </ul>
+</div>
+    </div>
+    <div class="has-text-light is-hidden-tablet nav-title">
+      <span> 4.0 Ensemble Model Training </span>
+    </div>
+
+    <div class="navbar-end">
+      <span class="navbar-item nav-search is-hidden-mobile" role="search">
+        <form action="../../search.html" method="GET" name="search">
+  <div class="control has-icons-right">
+    <span class="icon is-small is-right">
+      <i class="fas fa-search"></i>
+    </span>
+    <input class="input is-primary" type="text"  name="q" placeholder="Search"
+         autocapitalize="off" autocomplete="off" spellcheck="false">
+  </div>
+</form>
+      </span>
+      
+        <a href="https://github.com/OpenADMET/openadmet-demos" class="navbar-item is-hidden-touch has-text-light is-family-monospace">
+          
+<span class="icon-text">
+  <span class="icon">
+    <i class="fab fa-github"></i>
+  </span>
+  <span>
+
+  openadmet-demos
+
+  </span>
+</span>
+
+        </a>
+      
+      <span id=rtd-versions-container-header class="is-hidden-mobile navbar-item">
+      </span>
+    </div>
+    <span class="navbar-burger-spacer is-hidden-tablet"></span>
+  </nav>
+
+  
+
+  <div class="level is-hidden-mobile nav-tabs">
+  </div>
+
+</header>
+
+  
+  <main class="mb-6">
+      <div class="columns">
+        <input type="checkbox" id="drawer-toggle" class="is-hidden">
+        <label for="drawer-toggle" role="button" class="navbar-burger burger is-light is-hidden-tablet">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </label>
+
+        <aside class="column is-2-desktop is-3-tablet" id="drawer">
+          <div class="is-hidden-tablet clip-siblings">
+            <a href="../../index.html" title="OpenADMET Models  documentation">
+              <h1>
+                OpenADMET Models documentation
+              </h1>
+            </a>
+            
+              <div class="has-text-centered p-3">
+                <a href="https://github.com/OpenADMET/openadmet-demos" class="is-family-monospace">
+                  
+<span class="icon-text">
+  <span class="icon">
+    <i class="fab fa-github"></i>
+  </span>
+  <span>
+
+  openadmet-demos
+
+  </span>
+</span>
+
+                </a>
+              </div>
+            
+            <span id=rtd-versions-container-burger>
+            </span>
+            
+              <div class="p-3" role="search">
+                <form action="../../search.html" method="GET" name="search">
+  <div class="control has-icons-right">
+    <span class="icon is-small is-right">
+      <i class="fas fa-search"></i>
+    </span>
+    <input class="input is-primary" type="text"  name="q" placeholder="Search"
+         autocapitalize="off" autocomplete="off" spellcheck="false">
+  </div>
+</form>
+              </div>
+            
+          </div>
+          
+<nav class="menu ff-globaltoc">
+          
+          <p class="menu-label"><span class="caption-text">Tutorials</span></p>
+          <ul class="menu-list">
+        
+      
+          
+          <li>
+            <a href="../01_Data_Curation/01_Curate_ChEMBL_Data.html" class="">1.0 Curating CYP3A4 inhibition data from ChEMBL</a>
+            
+            </li>
+          
+        
+      
+          
+          <li>
+            <a href="../02_Model_Training/02_Training_Models.html" class="">2.0 Model Training</a>
+            
+            </li>
+          
+        
+      
+          
+          <li>
+            <a href="../03_Model_Comparison/03_Comparing_Models.html" class="">3.0 Comparing Models</a>
+            
+            </li>
+          
+        
+      
+          
+          <li>
+            <a href="#" class="is-active">4.0 Ensemble Model Training</a>
+            
+            </li>
+          
+        
+      
+          
+          <li>
+            <a href="../05_Ensemble_Model_Inference/05_Model_Ensemble_Inference.html" class="">5.0 Model Inference</a>
+            
+            </li>
+          
+            </ul>
+          
+        
+      
+    </ul>
+  </nav>
+
+        </aside>
+
+        <div class="column is-8-desktop is-9-tablet">
+          <article class="content">
+            
+  <section id="4.0-Ensemble-Model-Training">
+<h1>4.0 Ensemble Model Training<a class="headerlink" href="#4.0-Ensemble-Model-Training" title="Permalink to this heading"><i class='fas fa-link'></i></a></h1>
+<section id="What-is-Ensemble-Model-Training?">
+<h2>What is Ensemble Model Training?<a class="headerlink" href="#What-is-Ensemble-Model-Training?" title="Permalink to this heading"><i class='fas fa-link'></i></a></h2>
+<div><p><img alt="ANOVA" class="no-scaled-link" src="../../_images/ensemble-learning-bagging.png" style="width: 700px;" />.</p>
+</div><p><a class="reference external" href="https://www.ibm.com/think/topics/ensemble-learning">Image source</a></p>
+<p>In our Anvil workflow, our ensemble learning process at a high-level is:</p>
+<ol class="arabic simple">
+<li><p>the training data is bootstrapped, aka randomly sampled with replacement</p></li>
+<li><p>a user-selected model, e.g. <code class="docutils literal notranslate"><span class="pre">LightGBM</span> <span class="pre">Regressor</span></code>, <code class="docutils literal notranslate"><span class="pre">ChemProp</span> <span class="pre">Regressor</span></code>, etc. is trained on the bootstrapped data</p></li>
+<li><p>Steps 1 and 2 repeat for a user-designated <code class="docutils literal notranslate"><span class="pre">n</span></code> number of models</p></li>
+<li><p>the predictions of each trained model are combined, e.g. averaged together</p></li>
+</ol>
+</section>
+<section id="Why-Train-an-Ensemble-of-Models?">
+<h2>Why Train an Ensemble of Models?<a class="headerlink" href="#Why-Train-an-Ensemble-of-Models?" title="Permalink to this heading"><i class='fas fa-link'></i></a></h2>
+<p>For complex problems, like predicting ADMET profiles of compounds where data is sparse, training an ensemble of models increases the robustness and accuracy of the model predictions, especially compared to relying on a single model.</p>
+<p>Further, since you’re taking an average of the preditions across <code class="docutils literal notranslate"><span class="pre">n</span></code> number of models, you are also able to calculate the standard deviation or <strong>uncertainty</strong> of your predictions. This is essential for evaluating how <strong>reliable</strong> the ADME model is for real world applications and performing <strong>active learning</strong> with your model.</p>
+<blockquote>
+<div><p>If I’m relying on my model’s predictions to pick active compounds, how off can my predictions be?</p>
+</div></blockquote>
+<blockquote>
+<div><p>What degree of error does my model have?</p>
+<p>What compounds would be most informative to assay next?</p>
+</div></blockquote>
+<section id="Requirements">
+<h3>Requirements<a class="headerlink" href="#Requirements" title="Permalink to this heading"><i class='fas fa-link'></i></a></h3>
+<p>As in <code class="docutils literal notranslate"><span class="pre">02_Training_Models.ipynb</span></code>, you will need:</p>
+<ol class="arabic simple">
+<li><p>A dataset that has been processed with <code class="docutils literal notranslate"><span class="pre">01_Curate_ChEMBL_Data.ipynb</span></code>.</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">YAML</span></code> file with instructions for Anvil and specifically for ensemble model training. We will show you how to create this file in this notebook.</p></li>
+</ol>
+</section>
+</section>
+<section id="Overview">
+<h2>Overview<a class="headerlink" href="#Overview" title="Permalink to this heading"><i class='fas fa-link'></i></a></h2>
+<p>This notebook will walk you through how to train an ensemble of models with the Anvil workflow with the same CYP3A4 data used in <code class="docutils literal notranslate"><span class="pre">02_Training_Models.ipynb</span></code>.</p>
+</section>
+<section id="Create-the-YAML-file">
+<h2>Create the YAML file<a class="headerlink" href="#Create-the-YAML-file" title="Permalink to this heading"><i class='fas fa-link'></i></a></h2>
+<p>As in <code class="docutils literal notranslate"><span class="pre">02_Training_Models.ipynb</span></code>, we will use a <code class="docutils literal notranslate"><span class="pre">YAML</span></code> file containing all the necessary information to train the ensemble. The only difference from the usual anvil recipe is the <code class="docutils literal notranslate"><span class="pre">ensemble</span></code> section.</p>
+<p>In the below example, we will be training a <strong>5-model</strong> ensemble of <code class="docutils literal notranslate"><span class="pre">LGBM</span></code> regressors with the CYP3A4 ChEMBL data.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># This spection specifies the input data</span>
+<span class="nt">data</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Specify the dataset file</span>
+<span class="w">  </span><span class="nt">resource</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">../01_Data_Curation/processed_data/processed_CYP3A4_inhibition.csv</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">intake</span>
+<span class="w">  </span><span class="nt">input_col</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OPENADMET_SMILES</span>
+<span class="w">  </span><span class="c1"># Specify each (1+) of the target columns, or the column that you&#39;re trying to predict</span>
+<span class="w">  </span><span class="nt">target_cols</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OPENADMET_LOGAC50</span>
+<span class="w">  </span><span class="nt">dropna</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="c1"># Additional metadata</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">authors</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Your Name</span>
+<span class="w">  </span><span class="nt">email</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">youremail@email.com</span>
+<span class="w">  </span><span class="nt">biotargets</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CYP3A4</span>
+<span class="w">  </span><span class="nt">build_number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">basic regression using a LightGBM model</span>
+<span class="w">  </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sklearn</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lgbm_pchembl</span>
+<span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openadmet-chembl</span>
+<span class="w">  </span><span class="nt">tags</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openadmet</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pchembl</span>
+<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+
+<span class="c1"># Section specifying training procedure</span>
+<span class="nt">procedure</span><span class="p">:</span>
+<span class="c1"># Featurization specification</span>
+<span class="w">  </span><span class="nt">feat</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># Using concatenated features, which combines multiple featurizers</span>
+<span class="w">    </span><span class="c1"># here we use DescriptorFeaturizer and FingerprintFeaturizer for 2D RDKit descriptors and ECFP4 fingerprints</span>
+<span class="w">    </span><span class="c1"># See openadmet.models.features</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FeatureConcatenator</span>
+<span class="w">    </span><span class="c1"># Add parameters for the featurizer. Full description of the featurizer options are in Section 5.</span>
+<span class="w">    </span><span class="nt">params</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">featurizers</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">DescriptorFeaturizer</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">descr_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;desc2d&quot;</span>
+<span class="w">        </span><span class="nt">FingerprintFeaturizer</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">fp_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ecfp:4&quot;</span>
+
+<span class="w">  </span><span class="c1"># Model specification</span>
+<span class="w">  </span><span class="nt">model</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># Indicate model type</span>
+<span class="w">    </span><span class="c1"># See openadmet.models.architecture for all model types</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LGBMRegressorModel</span>
+<span class="w">    </span><span class="c1"># Specify model parameters</span>
+<span class="w">    </span><span class="nt">params</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">alpha</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.005</span>
+<span class="w">      </span><span class="nt">learning_rate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.05</span>
+<span class="w">      </span><span class="nt">n_estimators</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">500</span>
+
+<span class="w">  </span><span class="c1"># Ensemble specification</span>
+<span class="w">  </span><span class="nt">ensemble</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CommitteeRegressor</span>
+<span class="w">    </span><span class="nt">n_models</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">    </span><span class="nt">calibration_method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scaling-factor</span>
+
+<span class="w">  </span><span class="c1"># Specify data splits</span>
+<span class="w">  </span><span class="nt">split</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># Specify how data will be split</span>
+<span class="w">    </span><span class="c1"># See openadmet.models.split</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ShuffleSplitter</span>
+<span class="w">    </span><span class="c1"># Specify split parameters</span>
+<span class="w">    </span><span class="nt">params</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">random_state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">42</span>
+<span class="w">      </span><span class="nt">train_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.7</span>
+<span class="w">      </span><span class="nt">val_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span><span class="w"> </span><span class="c1"># Validation set is needed for uncertainty calibration</span>
+<span class="w">      </span><span class="nt">test_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2</span><span class="w"> </span><span class="c1"># If you want to compare tree-based models with Dl models later, the test sizes should match</span>
+
+<span class="w">  </span><span class="c1"># Specify training configuration</span>
+<span class="w">  </span><span class="nt">train</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># Specify the trainer, here SKLearnBasicTrainer as model has an sklearn interface</span>
+<span class="w">    </span><span class="c1"># could also use SKLearnGridSearchTrainer for hyperparameter tuning</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SKLearnBasicTrainer</span>
+
+
+<span class="c1"># Section specifying report generation</span>
+<span class="nt">report</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Configure evaluation</span>
+<span class="w">  </span><span class="nt">eval</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Generate regression metrics</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RegressionMetrics</span>
+<span class="w">    </span><span class="nt">params</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<span class="w">  </span><span class="c1"># Generate regression plots &amp; do cross validation</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SKLearnRepeatedKFoldCrossValidation</span>
+<span class="w">    </span><span class="nt">params</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">axes_labels</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True pAC50</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Predicted pAC50</span>
+<span class="w">      </span><span class="nt">max_val</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<span class="w">      </span><span class="nt">min_val</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">      </span><span class="nt">pXC50</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">n_splits</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">      </span><span class="nt">n_repeats</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">      </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True vs Predicted pAC50 on test set</span>
+<span class="w">  </span><span class="c1"># Generate uncertainty metrics</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UncertaintyMetrics</span>
+<span class="w">    </span><span class="nt">params</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">bins</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<span class="w">      </span><span class="nt">resolution</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">99</span>
+<span class="w">      </span><span class="nt">scaled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">  </span><span class="c1"># Generate uncertainty calibration plot</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UncertaintyPlots</span>
+<span class="w">    </span><span class="nt">params</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+<p>The command for running anvil is exactly the same as it was before!</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>openadmet<span class="w"> </span>anvil<span class="w"> </span>--recipe-path<span class="w"> </span>anvil_ensemble.yaml<span class="w"> </span>--output-dir<span class="w"> </span>ensemble
+</pre></div>
+</div>
+<p>We have already run this for you and have provided the results of the ensemble model training in <code class="docutils literal notranslate"><span class="pre">ensemble/</span></code>.</p>
+<p><strong>If training deep learning models, we highly recommend training on GPU.</strong></p>
+<p>With the ensemble training model output, you’ll notice that there is now a new plot: <code class="docutils literal notranslate"><span class="pre">OPENADMET_LOGAC50_uncertainty-calibration-plot.png</span></code>.</p>
+<div><p><img alt="uncertainty" class="no-scaled-link" src="../../_images/OPENADMET_LOGAC50_uncertainty-calibration-plot.png" style="width: 500px;" />.</p>
+</div><p>This plot helps visualize how miscalibrated or “off” the ensemble’s predicted uncertainty intervals (derived from the calculated standard deviation) are.</p>
+<p>If our model perfectly predicted the uncertainty intervals - in other words, if the error between <span class="math notranslate nohighlight">\(y_{predicted}\)</span> and <span class="math notranslate nohighlight">\(y_{actual}\)</span> always fell within the predicted uncertainty intervals - then the blue line would fall precisely along the dotted black line.</p>
+<div><p><img alt="uncertainty labelled" class="no-scaled-link" src="../../_images/uncertainty_labelled.png" style="width: 400px;" />.</p>
+</div><p>If the blue area was above the black line in the <strong>underconfidence</strong> zone, this would mean that our model’s uncertainty intervals are too large or, our model is underestimating uncertainty.</p>
+<p>When the blue area is below the black line in the <strong>overconfidence</strong> zone, this means the uncertainty intervals are too narrow or, our model is overestimating uncertainty.</p>
+<p>We can see our blue line does not completely fall along the dotted black line, but the shaded blue area represents the area of miscalibration, aka where our uncertainty estimation is inaccurate, is reasonably small (<code class="docutils literal notranslate"><span class="pre">=0.02</span></code>).</p>
+<p>This is because in our ensemble model training Anvil workflow, we applied a scaling factor to recalibrate our uncertainty estimations to minimize the miscalibration area. This is known as <strong>uncertainty calibration</strong> and helps <strong>empircally</strong> adjust the width of your error bars to match the distribution expected from a validation set. This is done using the <a class="reference external" href="https://github.com/uncertainty-toolbox/uncertainty-toolbox">Uncertainty Toolbox</a> package. Learn more by reading the documentation there!</p>
+<dl class="simple">
+<dt><strong>Now let’s apply our ensemble model to some unseen compounds!</strong></dt><dd><p>End of <code class="docutils literal notranslate"><span class="pre">04_Ensemble_Model_Training</span></code> ~</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+          </article>
+        </div>
+
+        <aside class="column is-hidden-touch is-2">
+          
+<nav class="ff-localtoc menu">
+  <p class="menu-label">Contents</p>
+  <ul>
+<li><a class="reference internal" href="#">4.0 Ensemble Model Training</a><ul>
+<li><a class="reference internal" href="#What-is-Ensemble-Model-Training?">What is Ensemble Model Training?</a></li>
+<li><a class="reference internal" href="#Why-Train-an-Ensemble-of-Models?">Why Train an Ensemble of Models?</a><ul>
+<li><a class="reference internal" href="#Requirements">Requirements</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Overview">Overview</a></li>
+<li><a class="reference internal" href="#Create-the-YAML-file">Create the YAML file</a></li>
+</ul>
+</li>
+</ul>
+
+</nav>
+        </aside>
+      </div>
+  </main>
+  <footer class="footer">
+  <div class="footer-content">
+        <nav class="level">
+          <div class="level-left">
+            
+              <div class="level-item">
+                <a href="../03_Model_Comparison/03_Comparing_Models.html" title="3.0 Comparing Models"
+                   class="icon-text"
+                   rel="prev">
+
+                    <span class="icon">
+                      <i class="fas fa-arrow-left"></i>
+                    </span>
+                    <span class="is-size-5">3.0 Comparing Models</span>
+                </a>
+              </div>
+            
+          </div>
+          <div class="level-right">
+            
+              <div class="level-item">
+                <a href="../05_Ensemble_Model_Inference/05_Model_Ensemble_Inference.html" title="5.0 Model Inference"
+                   class="icon-text"
+                   rel="next">
+
+                    <span class="is-size-5">5.0 Model Inference</span>
+                    <span class="icon">
+                      <i class="fas fa-arrow-right"></i>
+                    </span>
+                </a>
+              </div>
+            
+          </div>
+        </nav>
+      
+    <div class="columns">
+      <div class="fineprint column">
+          <div class="copyright">
+              &#169; Copyright 2025, OpenADMET Contributors. Project structure based on the Computational Molecular Science Python Cookiecutter version 1.10.
+              
+          </div>
+          Created using
+          <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+           and
+          <a href="https://github.com/openforcefield/openff-sphinx-theme/">the Open Force Field Sphinx theme</a>
+      </div>
+      <div class="socials column">
+        <p class="pb-3">An <a href="https://openforcefield.org/" class="has-text-white">Open Force Field Initiative</a> project.</p>
+        <div>
+          
+            
+              
+                <a href="https://github.com/openadmet" class="icon has-text-light is-medium" title="OpenADMET on GitHub">
+                  <i class="fa-lg ai-lg fab fa-github"></i>
+                </a>
+              
+            
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>

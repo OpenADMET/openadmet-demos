@@ -1,0 +1,38 @@
+ensemble: null
+feat:
+  params: {}
+  type: ChemPropFeaturizer
+model:
+  param_path: null
+  params:
+    batch_norm: true
+    depth: 4
+    dropout: 0.2
+    ffn_hidden_dim: 1024
+    ffn_hidden_num_layers: 4
+    from_chemeleon: false
+    message_hidden_dim: 2048
+    messages: bond
+    n_tasks: 4
+  serial_path: null
+  type: ChemPropModel
+split:
+  params:
+    random_state: 42
+    test_size: 0.2
+    train_size: 0.7
+    val_size: 0.1
+  type: ShuffleSplitter
+train:
+  params:
+    accelerator: gpu
+    early_stopping: true
+    early_stopping_min_delta: 0.001
+    early_stopping_mode: min
+    early_stopping_patience: 10
+    max_epochs: 50
+    monitor_metric: val_loss
+    use_wandb: false
+    wandb_project: demos
+  type: LightningTrainer
+transform: null

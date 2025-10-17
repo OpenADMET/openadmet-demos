@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+
+  
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="_static/site.css"/>
+  
+  <meta name="theme-color" content="#015480;">
+  
+  
+    <title>OpenADMET Demos &#8212; OpenADMET Models  documentation</title>
+  <script type="text/javascript" src="_static/openff.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/openff.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="icon" href="_static/favicon-32x32.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1.0 Curating CYP3A4 inhibition data from ChEMBL" href="demos/01_Data_Curation/01_Curate_ChEMBL_Data.html" />
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-accent=(232, 59, 59)
+        class="has-navbar-fixed-top">
+  <header data-md-component="header">
+  <nav class="navbar is-primary is-fixed-top is-flex-touch has-shadow" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a href="https://docs.openforcefield.org/" class="navbar-item is-hidden-mobile">
+        
+          <img src="_static/images/logos/openforcefield_v1_white.png" alt="OpenADMET Models documentation logo">
+        
+      </a>
+    </div>
+
+    <div class="has-text-light is-hidden-mobile nav-title">
+      <div class="breadcrumb">
+  <ul>
+        <li><a href="#">OpenADMET Models  documentation</a></li>
+      <li class="is-active"><a href="#">OpenADMET Demos</a></li>
+  </ul>
+</div>
+    </div>
+    <div class="has-text-light is-hidden-tablet nav-title">
+      <span> OpenADMET Demos </span>
+    </div>
+
+    <div class="navbar-end">
+      <span class="navbar-item nav-search is-hidden-mobile" role="search">
+        <form action="search.html" method="GET" name="search">
+  <div class="control has-icons-right">
+    <span class="icon is-small is-right">
+      <i class="fas fa-search"></i>
+    </span>
+    <input class="input is-primary" type="text"  name="q" placeholder="Search"
+         autocapitalize="off" autocomplete="off" spellcheck="false">
+  </div>
+</form>
+      </span>
+      
+        <a href="https://github.com/OpenADMET/openadmet-demos" class="navbar-item is-hidden-touch has-text-light is-family-monospace">
+          
+<span class="icon-text">
+  <span class="icon">
+    <i class="fab fa-github"></i>
+  </span>
+  <span>
+
+  openadmet-demos
+
+  </span>
+</span>
+
+        </a>
+      
+      <span id=rtd-versions-container-header class="is-hidden-mobile navbar-item">
+      </span>
+    </div>
+    <span class="navbar-burger-spacer is-hidden-tablet"></span>
+  </nav>
+
+  
+
+  <div class="level is-hidden-mobile nav-tabs">
+  </div>
+
+</header>
+
+  
+  <main class="mb-6">
+      <div class="columns">
+        <input type="checkbox" id="drawer-toggle" class="is-hidden">
+        <label for="drawer-toggle" role="button" class="navbar-burger burger is-light is-hidden-tablet">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </label>
+
+        <aside class="column is-2-desktop is-3-tablet" id="drawer">
+          <div class="is-hidden-tablet clip-siblings">
+            <a href="#" title="OpenADMET Models  documentation">
+              <h1>
+                OpenADMET Models documentation
+              </h1>
+            </a>
+            
+              <div class="has-text-centered p-3">
+                <a href="https://github.com/OpenADMET/openadmet-demos" class="is-family-monospace">
+                  
+<span class="icon-text">
+  <span class="icon">
+    <i class="fab fa-github"></i>
+  </span>
+  <span>
+
+  openadmet-demos
+
+  </span>
+</span>
+
+                </a>
+              </div>
+            
+            <span id=rtd-versions-container-burger>
+            </span>
+            
+              <div class="p-3" role="search">
+                <form action="search.html" method="GET" name="search">
+  <div class="control has-icons-right">
+    <span class="icon is-small is-right">
+      <i class="fas fa-search"></i>
+    </span>
+    <input class="input is-primary" type="text"  name="q" placeholder="Search"
+         autocapitalize="off" autocomplete="off" spellcheck="false">
+  </div>
+</form>
+              </div>
+            
+          </div>
+          
+<nav class="menu ff-globaltoc">
+          
+          <p class="menu-label"><span class="caption-text">Tutorials</span></p>
+          <ul class="menu-list">
+        
+      
+          
+          <li>
+            <a href="demos/01_Data_Curation/01_Curate_ChEMBL_Data.html" class="">1.0 Curating CYP3A4 inhibition data from ChEMBL</a>
+            
+            </li>
+          
+        
+      
+          
+          <li>
+            <a href="demos/02_Model_Training/02_Training_Models.html" class="">2.0 Model Training</a>
+            
+            </li>
+          
+        
+      
+          
+          <li>
+            <a href="demos/03_Model_Comparison/03_Comparing_Models.html" class="">3.0 Comparing Models</a>
+            
+            </li>
+          
+        
+      
+          
+          <li>
+            <a href="demos/04_Ensemble_Model_Training/04_Ensemble_Model_Training_Active_Learning.html" class="">4.0 Ensemble Model Training</a>
+            
+            </li>
+          
+        
+      
+          
+          <li>
+            <a href="demos/05_Ensemble_Model_Inference/05_Model_Ensemble_Inference.html" class="">5.0 Model Inference</a>
+            
+            </li>
+          
+            </ul>
+          
+        
+      
+    </ul>
+  </nav>
+
+        </aside>
+
+        <div class="column is-8-desktop is-9-tablet">
+          <article class="content">
+            
+  <section id="openadmet-demos">
+<h1>OpenADMET Demos<a class="headerlink" href="#openadmet-demos" title="Permalink to this heading"><i class='fas fa-link'></i></a></h1>
+<p>The OpenADMET Demos are a hands-on way to explore the OpenADMET ecosystem in action. The overall arc of the demos follows a typical situation in computational modelling for ADMET. Curating data for an ADMET endpoint of interest, training and comparing a series of machine learning models and then inferring on an unseen set of molecules. Each demo is designed to highlight key capabilities, from data curation, basic featurization and model training to more advanced workflows such as deep learning and active learning for ADMET prediction.</p>
+<p>These examples are intended to be:</p>
+<blockquote>
+<div><p>Practical – showing real use cases on chemical datasets.</p>
+<p>Educational – helping you understand the building blocks of the OpenADMET ecosystem.</p>
+<p>Interactive – Jupyter notebooks (some of which run nicely in Google Colab) give you a hands on introduction</p>
+</div></blockquote>
+<p>Whether you’re just getting started or looking for inspiration for your own projects, the demos will walk you through how to combine datasets, featurizers, models, and evaluation tools into end-to-end workflows.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="demos/01_Data_Curation/01_Curate_ChEMBL_Data.html">1.0 Curating CYP3A4 inhibition data from ChEMBL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demos/01_Data_Curation/01_Curate_ChEMBL_Data.html#CYP3A4-inhibition-Data-in-ChEMBL">CYP3A4 inhibition Data in ChEMBL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/01_Data_Curation/01_Curate_ChEMBL_Data.html#How-is-data-in-ChEMBL-organised">How is data in ChEMBL organised</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/01_Data_Curation/01_Curate_ChEMBL_Data.html#Using-ChEMBL-Target-Curators">Using ChEMBL Target Curators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/01_Data_Curation/01_Curate_ChEMBL_Data.html#Using-intake">Using intake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/01_Data_Curation/01_Curate_ChEMBL_Data.html#Exploring-our-dataset">Exploring our dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/01_Data_Curation/01_Curate_ChEMBL_Data.html#Final-touches">Final touches</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demos/02_Model_Training/02_Training_Models.html">2.0 Model Training</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demos/02_Model_Training/02_Training_Models.html#How-the-Anvil-Infrastructure-Works">How the Anvil Infrastructure Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/02_Model_Training/02_Training_Models.html#Training-a-Model-to-Predict-CYP3A4-Inhibition">Training a Model to Predict CYP3A4 Inhibition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/02_Model_Training/02_Training_Models.html#Creating-the-YAML-file">Creating the YAML file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/02_Model_Training/02_Training_Models.html#Training-a-Traditional-Machine-Learning-model:-LightGBM">Training a Traditional Machine Learning model: LightGBM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/02_Model_Training/02_Training_Models.html#Training-a-Deep-Learning-model:-ChemProp">Training a Deep Learning model: ChemProp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/02_Model_Training/02_Training_Models.html#Training-a-Multitask-Deep-Learning-Model:-ChemProp">Training a Multitask Deep Learning Model: ChemProp</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demos/03_Model_Comparison/03_Comparing_Models.html">3.0 Comparing Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demos/03_Model_Comparison/03_Comparing_Models.html#After-Training-your-Models,-What's-Next?">After Training your Models, What’s Next?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/03_Model_Comparison/03_Comparing_Models.html#Use-Anvil-to-Compare-Models">Use Anvil to Compare Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/03_Model_Comparison/03_Comparing_Models.html#Interpreting-the-comparison-plots">Interpreting the comparison plots</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demos/04_Ensemble_Model_Training/04_Ensemble_Model_Training_Active_Learning.html">4.0 Ensemble Model Training</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demos/04_Ensemble_Model_Training/04_Ensemble_Model_Training_Active_Learning.html#What-is-Ensemble-Model-Training?">What is Ensemble Model Training?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/04_Ensemble_Model_Training/04_Ensemble_Model_Training_Active_Learning.html#Why-Train-an-Ensemble-of-Models?">Why Train an Ensemble of Models?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/04_Ensemble_Model_Training/04_Ensemble_Model_Training_Active_Learning.html#Overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/04_Ensemble_Model_Training/04_Ensemble_Model_Training_Active_Learning.html#Create-the-YAML-file">Create the YAML file</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demos/05_Ensemble_Model_Inference/05_Model_Ensemble_Inference.html">5.0 Model Inference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demos/05_Ensemble_Model_Inference/05_Model_Ensemble_Inference.html#What-is-Model-Inference?-The-Best-Part!">What is Model Inference? The Best Part!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/05_Ensemble_Model_Inference/05_Model_Ensemble_Inference.html#Using-ADMET-models-in-Real-World-Drug-Development">Using ADMET models in Real World Drug Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/05_Ensemble_Model_Inference/05_Model_Ensemble_Inference.html#[OPTIONAL]-Data-Cleaning">[OPTIONAL] Data Cleaning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/05_Ensemble_Model_Inference/05_Model_Ensemble_Inference.html#Use-Anvil-to-predict-on-the-new-set-of-compounds">Use Anvil to predict on the new set of compounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/05_Ensemble_Model_Inference/05_Model_Ensemble_Inference.html#Analyze-your-predictions">Analyze your predictions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+          </article>
+        </div>
+
+        <aside class="column is-hidden-touch is-2">
+          
+        </aside>
+      </div>
+  </main>
+  <footer class="footer">
+  <div class="footer-content">
+        <nav class="level">
+          <div class="level-left">
+            
+          </div>
+          <div class="level-right">
+            
+              <div class="level-item">
+                <a href="demos/01_Data_Curation/01_Curate_ChEMBL_Data.html" title="1.0 Curating CYP3A4 inhibition data from ChEMBL"
+                   class="icon-text"
+                   rel="next">
+
+                    <span class="is-size-5">1.0 Curating CYP3A4 inhibition data from ChEMBL</span>
+                    <span class="icon">
+                      <i class="fas fa-arrow-right"></i>
+                    </span>
+                </a>
+              </div>
+            
+          </div>
+        </nav>
+      
+    <div class="columns">
+      <div class="fineprint column">
+          <div class="copyright">
+              &#169; Copyright 2025, OpenADMET Contributors. Project structure based on the Computational Molecular Science Python Cookiecutter version 1.10.
+              
+          </div>
+          Created using
+          <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+           and
+          <a href="https://github.com/openforcefield/openff-sphinx-theme/">the Open Force Field Sphinx theme</a>
+      </div>
+      <div class="socials column">
+        <p class="pb-3">An <a href="https://openforcefield.org/" class="has-text-white">Open Force Field Initiative</a> project.</p>
+        <div>
+          
+            
+              
+                <a href="https://github.com/openadmet" class="icon has-text-light is-medium" title="OpenADMET on GitHub">
+                  <i class="fa-lg ai-lg fab fa-github"></i>
+                </a>
+              
+            
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>
