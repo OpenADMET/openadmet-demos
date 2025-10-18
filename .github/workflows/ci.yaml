@@ -8,7 +8,9 @@ on:
     branches:
       - main
   schedule:
-    - cron: "0 0 * * 0"  # weekly run
+    # Run at 5:30 UTC every Monday
+    - cron: '30 5 * * 1'
+  workflow_dispatch:
 
 jobs:
   test:
