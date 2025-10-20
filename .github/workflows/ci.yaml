@@ -8,7 +8,9 @@ on:
     branches:
       - main
   schedule:
-    - cron: "0 0 * * 0"  # weekly run
+    # Run at 5:30 UTC every Monday
+    - cron: '30 5 * * 1'
+  workflow_dispatch:
 
 jobs:
   test:
@@ -54,12 +56,5 @@ jobs:
       - name: Run tests with pytest-nbmake
         shell: bash -l {0}
         run: |
-          cd demos
-          pytest -n=auto --nbmake --maxfail=1 --disable-warnings .
+          pytest -n=auto --nbmake --nbmake-timeout=1200 --maxfail=0 --disable-warnings .
 
-      # Optionally run CodeCov
-      - name: CodeCov
-        uses: codecov/codecov-action@v5.4.2
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          name: codecov-${{ matrix.os }}-py${{ matrix.python-version }}
