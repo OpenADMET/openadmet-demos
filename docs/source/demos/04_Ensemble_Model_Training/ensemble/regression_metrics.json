@@ -1,0 +1,35 @@
+{
+  "tag": "openadmet-chembl",
+  "OPENADMET_LOGAC50": {
+    "mse": {
+      "value": 0.3524194188941426,
+      "lower_ci": 0.31226675383017455,
+      "upper_ci": 0.39079683896019207,
+      "confidence_level": 0.95
+    },
+    "mae": {
+      "value": 0.4465646989682242,
+      "lower_ci": 0.4222337967930583,
+      "upper_ci": 0.4709442571117148,
+      "confidence_level": 0.95
+    },
+    "r2": {
+      "value": 0.5623844081977254,
+      "lower_ci": 0.5111424636094923,
+      "upper_ci": 0.6206202317407015,
+      "confidence_level": 0.95
+    },
+    "ktau": {
+      "value": 0.49253146522811225,
+      "lower_ci": 0.45712714400445065,
+      "upper_ci": 0.5279315439974452,
+      "confidence_level": 0.95
+    },
+    "spearmanr": {
+      "value": 0.6648324724238764,
+      "lower_ci": 0.6249568222000568,
+      "upper_ci": 0.7087997818943811,
+      "confidence_level": 0.95
+    }
+  }
+}

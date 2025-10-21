@@ -56,4 +56,3 @@ jobs:
         shell: bash -l {0}
         run: |
           pytest -n=auto --nbmake --nbmake-timeout=1200 --maxfail=0 --disable-warnings .
-
