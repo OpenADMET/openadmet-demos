@@ -12,15 +12,14 @@
 # Incase the project was not installed
 import os
 import sys
+import nbsphinx
 
-sys.path.insert(0, os.path.abspath(".."))
 
-import openadmet.models
 
 
 # -- Project information -----------------------------------------------------
 
-project = "OpenADMET Denis"
+project = "OpenADMET Demos"
 copyright = (
     "2025, OpenADMET Contributors. Project structure based on the "
     "Computational Molecular Science Python Cookiecutter version 1.10"
@@ -53,6 +52,7 @@ extensions = [
     "sphinx_design",
     "sphinx_copybutton",
     "openff_sphinx_theme",
+    "nbsphinx"
 ]
 
 autosummary_generate = True
@@ -69,6 +69,9 @@ html_js_files = ["_static/custom.js"]
 #
 # source_suffix = ['.rst', '.md']
 source_suffix = ".rst"
+
+# don't execute notebooks during the build
+nbsphinx_execute = "never"
 
 # The master toctree document.
 master_doc = "index"
