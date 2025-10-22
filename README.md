@@ -8,7 +8,7 @@
 [//]: # (Badges)
 [![Logo](https://img.shields.io/badge/OSMF-OpenADMET-%23002f4a)](https://openadmet.org/)
 [![GitHub Actions Build Status](https://github.com/OpenADMET/openadmet-demos/workflows/CI/badge.svg)](https://github.com/OpenADMET/openadmet-demos/actions?query)
-
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/OpenADMET/openadmet-demos/HEAD?urlpath=%2Fdoc%2Ftree%2Fshowcase%2FOpenADMET_Models_Showcase.ipynb)
 
 The OpenADMET Demos are a hands-on way to explore the OpenADMET ecosystem in action. The overall arc of the demos follows a typical situation in computational modelling for ADMET. Curating data for an ADMET endpoint of interest, training and comparing a series of machine learning models and then inferring on an unseen set of molecules. Each demo is designed to highlight key capabilities, from  data curation, basic featurization and model training to more advanced workflows such as deep learning and active learning for ADMET prediction.
 
