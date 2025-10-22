@@ -3,16 +3,17 @@ data:
   # Specify the dataset file
   resource: ../01_Data_Curation/processed_data/processed_CYP3A4_inhibition.csv
   type: intake
-  input_col: OPENADMET_CANONICAL_SMILES
+  input_col: OPENADMET_SMILES
   # Specify each (1+) of the target columns, or the column that you're trying to predict
   target_cols:
-  - OPENADMET_LOGAC50
+  - pchembl_value_mean
+  dropna: true
 
 
 # Additional metadata
 metadata:
-  authors: Your Name
-  email: youremail@mail.com
+  authors: Cynthia Xu
+  email: cynthia.xu@omsf.io
   biotargets:
   - CYP3A4
   build_number: 0
@@ -32,8 +33,10 @@ procedure:
     # Using the ChemPropFeaturizer (for ChemProp model)
     # See openadmet.models.features
     type: ChemPropFeaturizer
-    # No parameters passed
-    params: {}
+    params:
+      batch_size: 128
+      normalize_targets: true
+      n_jobs: 4
   
   # Model specification
   model:
@@ -95,13 +98,23 @@ report:
   - type: RegressionMetrics
     params: {}
   # Generate regression plots & do cross validation
-  - type: PytorchLightningRepeatedKFoldCrossValidation
+  - type: RegressionPlots
     params:
       axes_labels:
-      - True LogAC50
-      - Predicted LogAC50
-      n_repeats: 5
-      n_splits: 5
-      random_state: 42
+      - True pAC50
+      - Predicted pAC50
+      max_val: 10
+      min_val: 3
       pXC50: true
-      title: True vs Predicted LogAC50 on test set
+      n_splits: 5
+      n_repeats: 5
+      title: True vs Predicted pAC50 on test set
+  # Generate uncertainty metrics
+  - type: UncertaintyMetrics
+    params:
+      bins: 100
+      resolution: 99
+      scaled: True
+  # Generate uncertainty calibration plot
+  - type: UncertaintyPlots
+    params: {}
