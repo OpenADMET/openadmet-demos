@@ -67,7 +67,7 @@ dependencies:
     - phx-class-registry
     - tabpfn-extensions
     - git+https://github.com/PriorLabs/TabPFN.git@main
-    - git+https://github.com/OpenADMET/openadmet-models.git
-    - git+https://github.com/OpenADMET/openadmet-toolkit.git
+    - git+https://github.com/OpenADMET/openadmet-models.git@main
+    - git+https://github.com/OpenADMET/openadmet-toolkit.git@main
     - mols2grid
     - git+https://github.com/openforcefield/openff-sphinx-theme/@main
