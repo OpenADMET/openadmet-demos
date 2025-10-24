@@ -22,7 +22,7 @@ These examples are intended to be:
 
 Whether you’re just getting started or looking for inspiration for your own projects, the demos will walk you through how to combine datasets, featurizers, models, and evaluation tools into end-to-end workflows.
 
-
+Try now on [Binder](https://mybinder.org/v2/gh/OpenADMET/openadmet-demos/HEAD?urlpath=%2Fdoc%2Ftree%2Fshowcase%2FOpenADMET_Models_Showcase.ipynb)!
 
 ## Who are these demos for ? 
 
