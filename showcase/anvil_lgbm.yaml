@@ -81,7 +81,7 @@ report:
   - type: RegressionMetrics
     params: {}
   # Generate regression plots & do cross validation
-  - type: SKLearnRepeatedKFoldCrossValidation
+  - type: RegressionPlots
     params:
       axes_labels:
       - True pAC50
@@ -89,6 +89,17 @@ report:
       max_val: 10
       min_val: 3
       pXC50: true
-      n_splits: 5
-      n_repeats: 5
       title: True vs Predicted pAC50 on test set
+
+  # - type: SKLearnRepeatedKFoldCrossValidation
+  #   params:
+  #     axes_labels:
+  #     - True pAC50
+  #     - Predicted pAC50
+  #     max_val: 10
+  #     min_val: 3
+  #     pXC50: true
+  #     n_splits: 5
+  #     n_repeats: 5
+  #     title: True vs Predicted pAC50 on test set
+

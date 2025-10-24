@@ -1,0 +1,8 @@
+anvil_dir: file:///Users/cynthiaxu/OMSF/openadmet-demos/showcase
+cat_entry: null
+dropna: true
+input_col: OPENADMET_CANONICAL_SMILES
+resource: cleaned_cyp3a4.csv
+target_cols:
+- OPENADMET_LOGAC50
+type: intake

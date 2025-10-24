@@ -1,12 +1,15 @@
 data:
-  anvil_dir: file:///Users/cynthiaxu/OMSF/openadmet-demos/showcase
+  anvil_dir: file:///store/projects/OpenADMET/openadmet-toolkit/openadmet-demos/showcase
   cat_entry: null
   dropna: true
   input_col: OPENADMET_CANONICAL_SMILES
   resource: cleaned_cyp3a4.csv
   target_cols:
   - OPENADMET_LOGAC50
+  test_resource: null
+  train_resource: null
   type: intake
+  val_resource: null
 metadata:
   authors: Your Name
   biotargets:
@@ -62,8 +65,6 @@ report:
       - Predicted pAC50
       max_val: 10
       min_val: 3
-      n_repeats: 5
-      n_splits: 5
       pXC50: true
       title: True vs Predicted pAC50 on test set
-    type: SKLearnRepeatedKFoldCrossValidation
+    type: RegressionPlots

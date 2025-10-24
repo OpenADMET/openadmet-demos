@@ -17,5 +17,6 @@
   "reg_lambda": 0.0,
   "random_state": null,
   "n_jobs": null,
-  "importance_type": "split"
+  "importance_type": "split",
+  "verbose": -1
 }
