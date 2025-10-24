@@ -30,17 +30,12 @@ metadata:
 procedure:
 # Featurization specification
   feat:
-    # Using concatenated features, which combines multiple featurizers
-    # here we use DescriptorFeaturizer and FingerprintFeaturizer for 2D RDKit descriptors and ECFP4 fingerprints
-    # See openadmet.models.features 
-    type: FeatureConcatenator
+    # Just using fingerprint featurizer here, but other featurizers are available
+    # See openadmet.featurizers for all featurizer types
+    type: FingerprintFeaturizer
     # Add parameters for the featurizer. Full description of the featurizer options are in Section 5.
     params:
-      featurizers:
-        DescriptorFeaturizer:
-          descr_type: "desc2d"
-        FingerprintFeaturizer:
-          fp_type: "ecfp:4"
+      fp_type: "ecfp:4"
   
   # Model specification
   model:
