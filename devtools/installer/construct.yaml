@@ -10,7 +10,7 @@ write_condarc: True
 keep_pkgs: True
 transmute_file_type: .conda
 
-environment_file: ../../environment.yaml
+environment_file: ../../environment.yml
 
 
 # Not building an .exe for windows or a .pkg for macOS
