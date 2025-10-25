@@ -15,3 +15,4 @@ environment_file: ../../environment.yml
 
 # Not building an .exe for windows or a .pkg for macOS
 installer_type: sh
+initialize_by_default: true
