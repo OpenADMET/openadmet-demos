@@ -1,0 +1,17 @@
+name: OpenADMETForge
+version: {{ environ["VERSION"] }}
+company: OpenADMET
+license_file: ../../LICENSE
+
+channels:
+  - conda-forge
+
+write_condarc: True
+keep_pkgs: True
+transmute_file_type: .conda
+
+environment_file: ../../environment.yaml
+
+
+# Not building an .exe for windows or a .pkg for macOS
+installer_type: sh
