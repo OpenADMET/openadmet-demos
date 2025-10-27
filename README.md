@@ -8,7 +8,8 @@
 [//]: # (Badges)
 [![Logo](https://img.shields.io/badge/OSMF-OpenADMET-%23002f4a)](https://openadmet.org/)
 [![GitHub Actions Build Status](https://github.com/OpenADMET/openadmet-demos/workflows/CI/badge.svg)](https://github.com/OpenADMET/openadmet-demos/actions?query)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/OpenADMET/openadmet-demos/HEAD?urlpath=%2Fdoc%2Ftree%2Fshowcase%2FOpenADMET_Models_Showcase.ipynb)
+[![Google Colab](https://img.shields.io/badge/Google%20Colab-F9AB00?logo=googlecolab&logoColor=fff)](https://try.openadmet.org)
+<!--[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/OpenADMET/openadmet-demos/HEAD?urlpath=%2Fdoc%2Ftree%2Fshowcase%2FOpenADMET_Models_Showcase.ipynb)-->
 
 The OpenADMET Demos are a hands-on way to explore the OpenADMET ecosystem in action. The overall arc of the demos follows a typical situation in computational modelling for ADMET. Curating data for an ADMET endpoint of interest, training and comparing a series of machine learning models and then inferring on an unseen set of molecules. Each demo is designed to highlight key capabilities, from  data curation, basic featurization and model training to more advanced workflows such as deep learning and active learning for ADMET prediction.
 
@@ -22,7 +23,7 @@ These examples are intended to be:
 
 Whether you’re just getting started or looking for inspiration for your own projects, the demos will walk you through how to combine datasets, featurizers, models, and evaluation tools into end-to-end workflows.
 
-Try now on [Binder](https://mybinder.org/v2/gh/OpenADMET/openadmet-demos/HEAD?urlpath=%2Fdoc%2Ftree%2Fshowcase%2FOpenADMET_Models_Showcase.ipynb)!
+Try now on [Google Colab](https://try.openadmet.org)!
 
 ## Who are these demos for ? 
 
