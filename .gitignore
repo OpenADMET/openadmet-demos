@@ -9,3 +9,5 @@ slurm*.out
 # ipython
 .ipynb_checkpoints
 **/.ipynb_checkpoints/
+
+CLAUDE.md
