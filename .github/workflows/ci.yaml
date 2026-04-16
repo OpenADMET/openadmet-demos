@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - fix/32/blog-link
   pull_request:
     branches:
       - main
