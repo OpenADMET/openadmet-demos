@@ -26,6 +26,7 @@ dependencies:
   - pandas
   - pingouin
   - pip
+  - setuptools
   - python >= 3.12
   - pytorch
   - pytorch-lightning
