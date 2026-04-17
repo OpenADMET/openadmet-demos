@@ -100,13 +100,13 @@ This notebook is a practical guide to building a full ADMET modeling pipeline wi
 
 ```bash
 git clone git@github.com:OpenADMET/openadmet-demos.git
-cd openadmet-demos/conda-envs/
+cd openadmet-demos
 ```
 
 2. Create a `conda` environment containing the requirements from that directory
 
 ```bash
-conda env create -n openadmet -f openadmet_demos.yaml
+conda env create -n openadmet
 ```
 
 3. Activate the environment

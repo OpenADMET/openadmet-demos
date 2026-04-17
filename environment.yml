@@ -1,7 +1,6 @@
 name: openadmet-demos
 channels:
   - conda-forge
-  - defaults
 dependencies:
   - ase
   - boto3
@@ -9,6 +8,7 @@ dependencies:
   - chemprop >= 2.1.1
   - codecov
   - datamol
+  - duckdb
   - e3nn
   - h5py
   - hyperopt
@@ -20,9 +20,11 @@ dependencies:
   - loguru
   - matplotlib
   - mdanalysis
+  - medchem
   - modal
   - mordredcommunity
-  - numpy >=1.23,<2.0 
+  - numpy
+  - openff-units
   - pandas
   - pingouin
   - pip
@@ -36,7 +38,6 @@ dependencies:
   - pytest
   - pytest-cov
   - pytest-xdist
-  - openff-units
   - rdkit
   - rich
   - scikit-learn
@@ -50,9 +51,6 @@ dependencies:
   - wandb
   - xgboost
   - zarr >=3.0.0
-  - duckdb
-  - datamol
-  - medchem
   - pip:
     - chembl-downloader
     - email-validator
@@ -60,8 +58,10 @@ dependencies:
     - phx-class-registry
     - tabpfn-extensions
     - git+https://github.com/PriorLabs/TabPFN.git@main
+    - git+https://github.com/JacksonBurns/neural-pairwise-regression.git
     - git+https://github.com/OpenADMET/openadmet-models.git@main
     - git+https://github.com/OpenADMET/openadmet-toolkit.git@main
     - mols2grid
     - git+https://github.com/OpenADMET/molfeat.git@main
-
+    - git+https://github.com/PatWalters/useful_rdkit_utils.git@master
+    - setuptools <82.0.0

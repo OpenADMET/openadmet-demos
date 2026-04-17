@@ -46,13 +46,18 @@ jobs:
             python=${{ matrix.python-version }}
 
       # Activate environment and run notebooks
-      - name: Install pytest-nbmake & demos
+      - name: Install pytest-nbmake
         shell: bash -l {0}
         run: |
-          python -m pip install .
           python -m pip install nbmake pytest-xdist
+
+      - name: Verify openadmet CLI
+        shell: bash -l {0}
+        run: |
+          which openadmet
+          openadmet --help
 
       - name: Run tests with pytest-nbmake
         shell: bash -l {0}
         run: |
-          pytest -n=auto --nbmake --nbmake-timeout=1200 --maxfail=0 --disable-warnings .
+          pytest --nbmake --nbmake-timeout=1200 --maxfail=0 --disable-warnings demos/ showcase/
