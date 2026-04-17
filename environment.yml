@@ -1,7 +1,6 @@
 name: openadmet-demos
 channels:
   - conda-forge
-  - defaults
 dependencies:
   - ase
   - boto3
