@@ -28,3 +28,4 @@ Whether you’re just getting started or looking for inspiration for your own pr
    demos/03_Model_Comparison/03_Comparing_Models
    demos/04_Ensemble_Model_Training/04_Ensemble_Model_Training_Active_Learning
    demos/05_Ensemble_Model_Inference/05_Model_Ensemble_Inference
+   demos/06_Finetuning/06_Finetuning
