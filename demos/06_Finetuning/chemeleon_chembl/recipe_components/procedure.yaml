@@ -1,0 +1,47 @@
+ensemble: null
+feat:
+  params:
+    batch_size: 128
+    n_jobs: 4
+    normalize_targets: true
+  type: ChemPropFeaturizer
+model:
+  freeze_weights: null
+  param_path: null
+  params:
+    batch_norm: false
+    dropout: 0.25
+    ffn_hidden_dim: 512
+    ffn_hidden_num_layers: 3
+    ffn_lr: 1e-3
+    ffn_weight_decay: 1e-4
+    from_chemeleon: true
+    mpnn_lr: 1e-4
+    mpnn_weight_decay: 0
+    n_tasks: 3
+    reduce_lr_factor: 0.5
+    reduce_lr_patience: 5
+    scheduler: plateau
+  serial_path: null
+  type: ChemPropModel
+split:
+  params:
+    random_state: 42
+    test_size: 0
+    train_size: 1.0
+    val_size: 0
+  type: ShuffleSplitter
+train:
+  params:
+    accelerator: gpu
+    early_stopping: true
+    early_stopping_min_delta: 0.001
+    early_stopping_mode: min
+    early_stopping_patience: 20
+    gradient_clip_val: 0.5
+    max_epochs: 100
+    monitor_metric: val_loss
+    use_wandb: false
+    wandb_project: demos
+  type: LightningTrainer
+transform: null

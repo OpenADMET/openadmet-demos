@@ -1,0 +1,16 @@
+authors: Cynthia Xu
+biotargets:
+- HLM
+- RLM
+- MLM
+build_number: 0
+description: basic regression using a ChemProp multitask task model
+driver: pytorch
+email: cynthia.xu@omsf.io
+name: chemprop_pchembl
+tag: chemprop
+tags:
+- openadmet
+- example
+- chemprop
+version: v1

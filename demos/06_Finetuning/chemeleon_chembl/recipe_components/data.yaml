@@ -1,0 +1,13 @@
+anvil_dir: file:///data1/choderaj/openadmet/xu/app-domain-exp/microsomal/models/baseline_ensemble
+cat_entry: null
+dropna: false
+input_col: OPENADMET_CANONICAL_SMILES
+resource: file:///data1/choderaj/openadmet/xu/app-domain-exp/microsomal/models/baseline_ensemble/../../train_data/train_baseline_001.csv
+target_cols:
+- LOG_CLint_HLM
+- LOG_CLint_RLM
+- LOG_CLint_MLM
+test_resource: null
+train_resource: null
+type: intake
+val_resource: null
