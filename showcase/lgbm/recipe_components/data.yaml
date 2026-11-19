@@ -1,4 +1,4 @@
-anvil_dir: file:///store/projects/OpenADMET/openadmet-toolkit/openadmet-demos/showcase
+anvil_dir: file:///Users/dwwest/openadmet-demos/showcase
 cat_entry: null
 dropna: true
 input_col: OPENADMET_CANONICAL_SMILES
