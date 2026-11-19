@@ -1,4 +1,4 @@
-anvil_dir: file:///Users/cynthiaxu/OMSF/openadmet-demos/demos/02_Model_Training
+anvil_dir: file:///Users/dwwest/openadmet-demos/demos/02_Model_Training
 cat_entry: null
 dropna: true
 input_col: OPENADMET_CANONICAL_SMILES

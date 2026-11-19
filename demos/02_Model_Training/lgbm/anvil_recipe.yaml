@@ -1,5 +1,5 @@
 data:
-  anvil_dir: file:///Users/cynthiaxu/OMSF/openadmet-demos/demos/02_Model_Training
+  anvil_dir: file:///Users/dwwest/openadmet-demos/demos/02_Model_Training
   cat_entry: null
   dropna: true
   input_col: OPENADMET_CANONICAL_SMILES
@@ -44,9 +44,10 @@ procedure:
       n_estimators: 500
     serial_path: null
     type: LGBMRegressorModel
+  random_seed: 42
   split:
     params:
-      random_state: 42
+      random_seed: 42
       test_size: 0.2
       train_size: 0.8
       val_size: 0.0

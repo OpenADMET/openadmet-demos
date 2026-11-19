@@ -1,5 +1,5 @@
 data:
-  anvil_dir: file:///store/projects/OpenADMET/openadmet-toolkit/openadmet-demos/showcase
+  anvil_dir: file:///Users/dwwest/openadmet-demos/showcase
   cat_entry: null
   dropna: true
   input_col: OPENADMET_CANONICAL_SMILES
@@ -29,12 +29,8 @@ procedure:
   ensemble: null
   feat:
     params:
-      featurizers:
-        DescriptorFeaturizer:
-          descr_type: desc2d
-        FingerprintFeaturizer:
-          fp_type: ecfp:4
-    type: FeatureConcatenator
+      fp_type: ecfp:4
+    type: FingerprintFeaturizer
   model:
     freeze_weights: null
     param_path: null
@@ -44,9 +40,10 @@ procedure:
       n_estimators: 500
     serial_path: null
     type: LGBMRegressorModel
+  random_seed: 42
   split:
     params:
-      random_state: 42
+      random_seed: 42
       test_size: 0.2
       train_size: 0.8
       val_size: 0.0
